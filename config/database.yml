@@ -21,5 +21,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: inforing_servi56
+  host: postgresql2.locum.ru
+  username: inforing_servi56
+  password: XgxQXRJPg
+  encoding: utf8
