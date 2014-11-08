@@ -1,0 +1,50 @@
+aside.footer
+  .container
+    .row
+      .col-md-4.sitemap
+        h3.title Карта сайта
+        ul.list-unstyled
+          li
+            = link_to "Главная", root_path, target: "_top"
+          li
+            = link_to "Контакты", contact_path, target: "_top"
+          li
+            = link_to "Цены", repairs_path, target: "_top"
+      .col-md-4.news
+        h3.title Новости
+        .media
+          = link_to image_tag("news.jpg", alt: "Принтеры", class: "img-responsive media-object", width: 75, height: 75), "#", class: "pull-left", target: "_top"
+          .media-body
+            h4.media-heading
+              = link_to "Новость 1", "#", target: "_top"
+            small 18 августа 2013
+        .media
+          = link_to image_tag("news.jpg", alt: "Принтеры", class: "img-responsive media-object", width: 75, height: 75), "#", class: "pull-left", target: "_top"
+          .media-body
+            h4.media-heading
+              = link_to "Новость 2", "#", target: "_top"
+            small 18 августа 2013
+        .media
+          = link_to image_tag("news.jpg", alt: "Принтеры", class: "img-responsive media-object", width: 75, height: 75), "#", class: "pull-left", target: "_top"
+          .media-body
+            h4.media-heading
+              = link_to "Новость 3", "#", target: "_top"
+            small 18 августа 2013
+      .col-md-4.contacts
+        h3.title Контакты
+        address
+          p
+            | Город: Ульяновск
+          p
+            | Адрес: ул.Льва Толстого д.60
+          p
+            | Телефон: (8422) 680-780
+          p
+            | E-mail: 
+            = link_to "support@inforing73.net", "mailto:support@inforing73.net"
+
+footer.copyright
+  p
+    | © 2014
+    = link_to " Inforing Software", "http://software.inforing73.net/", target: "_top"
+    | , inc. All rights reserved.
