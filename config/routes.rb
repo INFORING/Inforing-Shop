@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :prices
   resources :sessions, only: [:new, :create, :destroy]
 
-  root to: 'pages#home'
+  root 'pages#home'
  
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/contact', to: 'pages#contact', via: 'get'

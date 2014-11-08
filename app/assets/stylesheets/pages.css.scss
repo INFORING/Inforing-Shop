@@ -3,7 +3,7 @@
 /* Carousel */
 
 .carousel-section {
-	background-image: url(carousel-background.jpg);
+	background-image: image_url('carousel-background.jpg');
 	margin-bottom: 40px;
 	overflow: hidden;
 }
@@ -261,7 +261,7 @@
 /* Admin */
 
 .admin {
-	background: url(back.png);
+	background: image_url('back.jpg');
 	background-repeat: repeat;
 
 	input[type="text"] {
