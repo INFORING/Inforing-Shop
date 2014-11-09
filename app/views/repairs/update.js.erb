@@ -1,0 +1,5 @@
+$('#editRepairModal').modal('hide');
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+$('#repair').html("<%= escape_javascript(render partial: 'repairs/show_repair', locals: { :@repair => @repair, :@items => @items}) %>");
+$('#bread').html("<%= escape_javascript(render partial: 'layouts/breadcrumbs') %>");
