@@ -14,10 +14,7 @@ gem 'breadcrumbs_on_rails'
 gem 'paperclip'
 gem 'rmagick'
 gem 'animate-rails'
-<<<<<<< HEAD
-=======
 gem 'remotipart'
->>>>>>> aa951fd0617d1688f24719ceeafb370905b3d8c2
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

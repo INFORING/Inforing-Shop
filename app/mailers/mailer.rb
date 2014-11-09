@@ -3,6 +3,6 @@ class Mailer < ActionMailer::Base
   	@name = name
   	@email = email
   	@text = text
-  	mail(to: "nameless73@mail.ru", subject: "Обратная связь")
+  	mail(to: "sylorweb@gmail.com", subject: "Обратная связь")
   end
 end
