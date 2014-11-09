@@ -134,6 +134,10 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+<<<<<<< HEAD
+=======
+    remotipart (1.2.1)
+>>>>>>> aa951fd0617d1688f24719ceeafb370905b3d8c2
     rmagick (2.13.3)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
@@ -225,6 +229,10 @@ DEPENDENCIES
   pg (= 0.15.1)
   rails (= 4.1.4)
   rails_12factor (= 0.0.2)
+<<<<<<< HEAD
+=======
+  remotipart
+>>>>>>> aa951fd0617d1688f24719ceeafb370905b3d8c2
   rmagick
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.2)

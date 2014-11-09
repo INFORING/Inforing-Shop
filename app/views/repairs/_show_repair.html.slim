@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+- provide(:bread, @repair.bread)
+>>>>>>> aa951fd0617d1688f24719ceeafb370905b3d8c2
 .repair
 	.container
 		.row
@@ -92,11 +96,21 @@
 			.modal-header
 				button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
 				h4#editRepairModalLabel.modal-title Редактирование ремонта
+<<<<<<< HEAD
 			= form_for(@repair,remote: true,method: :put) do |f|
 				.modal-body
 					= f.text_field :title, class: "form-control"
 					= f.text_area :description, class: "form-control"
 					= f.text_field :bread, class: "form-control"
+=======
+			= form_for(@repair,remote: true,method: :put, multipart: true) do |f|
+				.modal-body
+				    = hidden_field_tag :authenticity_token, form_authenticity_token  
+					= f.text_field :title, class: "form-control"
+					= f.text_area :description, class: "form-control"
+					= f.text_field :bread, class: "form-control"
+					= f.file_field :image, class: "form-control"
+>>>>>>> aa951fd0617d1688f24719ceeafb370905b3d8c2
 				.modal-footer
 					button.btn.btn-ar.btn-default data-dismiss="modal" type="button"  Закрыть
 					= f.submit "Подтвердить", class: "btn btn-primary pull-left", :disable_with => "Пожалуйста подождите.."
