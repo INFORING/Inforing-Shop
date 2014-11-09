@@ -11,7 +11,7 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
       = link_to 'javascript:void(0);', class: 'icon-navbar slidebar-toggle-right' do
         i.fa.fa-bars
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav
+      ul.nav.navbar-nav.navbar-
         = nav_link 'Главная', root_path
         = nav_link 'Контакты', contact_path
         = nav_dropdown_link 'Цены', repairs_path, @repairs
