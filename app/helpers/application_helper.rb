@@ -12,7 +12,7 @@ module ApplicationHelper
 
     content_tag(:li, :class => class_name) do
       link_to(link_text, link_path, class: "dropdown-toggle", "data-toggle"=>"dropdown") + content_tag(:ul, :class => "dropdown-menu dropdown-menu-left") do
-        extra.collect {|e| concat(content_tag(:li, link_to(e.title, repair_path(e.id))))}
+        extra.order('title ASC').collect {|e| concat(content_tag(:li, link_to(e.title, repair_path(e.id))))}
       end
     end
   end
