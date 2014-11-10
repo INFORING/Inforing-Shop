@@ -788,6 +788,10 @@ header {
 .panel-group {
   .panel {
     border-radius: 0;
+
+    .collapse {
+      border: 1px solid #5ebe1e;
+    }
   }
 }
 
@@ -935,6 +939,10 @@ header {
 }
 
 /* Modal */
+
+.modal-dialog {
+  margin-top: 80px;
+}
 
 .modal-open {
   position: static !important;

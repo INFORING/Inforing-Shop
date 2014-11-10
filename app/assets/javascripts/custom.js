@@ -17,7 +17,7 @@
 		$('#accordion').on('show.bs.collapse', function () {
 		  $('#accordion .in').collapse('hide');
 		});
-
+		
 		$("li > a.dropdown-toggle").click(function(e) {
     	e.stopPropagation();
 		});	

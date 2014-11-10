@@ -262,8 +262,8 @@
 	  padding: 21px 5px 20px 5px;
 	  height: 69px;
 
-	  &.empty {
-	  	background-color: #fff;
+	  .invisible {
+	  	visibility: hidden;
 	  }
 	}
 
