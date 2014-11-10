@@ -33,14 +33,14 @@
 					- @count = 0
 
 				.carousel-inner
-					- @items.order('created_at DESC').each do |i|
+					- @items.order('created_at ASC').each do |i|
 						div class = "#{count_tag(@count)}"
 							.col-md-4.col-sm-4.col-xs-4.col
 								.pricing.description
 									.head
 										h3.title Услуги
 									ul.content
-										- i.services.order('created_at DESC').each do |s|
+										- i.services.order('created_at ASC').each do |s|
 											li.service
 												= s.title
 												- if admin?
@@ -56,7 +56,7 @@
 										= i.title
 								
 						
-							- i.models.order('created_at DESC').each do |m|
+							- i.models.order('created_at ASC').each do |m|
 								div class = "col-md-8 col" style = "#{col_tag(i.models)}"
 										.pricing
 											.head
@@ -68,7 +68,7 @@
 														= link_to model_path(m, item_id: i.id), method: :delete, remote: true, data: { confirm: "Вы уверены удалить модель #{m.title}?" } do
 															i.fa.fa-times
 											ul.content
-												- m.services.order('created_at DESC').each do |s|  
+												- m.services.order('created_at ASC').each do |s|  
 													li.price_id
 														= find_price(m,s)
 
