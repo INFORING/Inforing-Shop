@@ -8,7 +8,7 @@
 				.modal-body
 				  = text_field_tag :title,nil, class: "form-control"
 				  = hidden_field_tag :item_id,@item.id
-				  - @item.services.each do |s|
+				  - @item.services.order('created_at ASC').each do |s|
 						= text_field_tag "services[#{s.id}]","", placeholder: s.title, class: "form-control"
 				.modal-footer
 					= submit_tag "Подтвердить", class: "btn btn-primary pull-left", :disable_with => "Пожалуйста подождите.."
