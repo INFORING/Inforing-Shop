@@ -22,19 +22,23 @@ body {
 
 #wrap {
 	width: 100%;
-	position: relative;
 	z-index: 1;
-	background-color: #ffffff; /* Default background colour, overwrite this with your own css. */
+	background-color: #fff;
 }
 
 .slidebar {
 	height: 100%;
-	overflow-y: auto; /* Enable vertical scrolling on Slidebars when needed. */
+	overflow-y: auto; 
 	position: fixed;
 	top: 0;
-	z-index: 0; /* Slidebars sit behind wrap. */
-	visibility: hidden; /* Initially hide the Slidebars. */
-	background-color: #222222; /* Default Slidebars background colour, overwrite this with your own css. */
+	z-index: 0;
+	visibility: hidden; 
+	background-color: #222;
+	-webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .slidebar-left {
@@ -51,7 +55,7 @@ html.slidebar-static .slidebar,
 }
 
 .slidebar.slidebar-active {
-	visibility: visible; /* Makes Slidebars visibile when open. */
+	visibility: visible; 
 }
 
 .slidebar.slidebar-style-overlay {
@@ -145,8 +149,8 @@ html.slidebar-static .slidebar,
 	   -moz-transition: -moz-transform 400ms ease;
 	     -o-transition: -o-transform 400ms ease;
 	        transition: transform 400ms ease;
-	-webkit-transition-property: -webkit-transform, left, right; /* Add left/right for Android < 4.4. */
-	-webkit-backface-visibility: hidden; /* Prevents flickering. This is non essential, and you may remove it if your having problems with fixed background images in Chrome. */
+	-webkit-transition-property: -webkit-transform, left, right; 
+	-webkit-backface-visibility: hidden; 
 }
  
 .slidebar-hide { 

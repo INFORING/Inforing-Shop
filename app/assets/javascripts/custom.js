@@ -245,12 +245,12 @@
 			function proceed() {
 				if (init && side === 'left' && $left) { // Slidebars is initiated, left is in use and called to open.
 					$('html').addClass('slidebar-active slidebar-active-left'); // Add active classes.
-					$left.addClass('slidebar-active');
+					$left.addClass('slidebar-active').addClass('animated').addClass('fadeIn').addClass('animation-delay-2');
 					animate($left, $left.css('width'), 'left'); // Animation
 					setTimeout(function() { leftActive = true; }, 400); // Set active variables.
 				} else if (init && side === 'right' && $right) { // Slidebars is initiated, right is in use and called to open.
 					$('html').addClass('slidebar-active slidebar-active-right'); // Add active classes.
-					$right.addClass('slidebar-active');
+					$right.addClass('slidebar-active').addClass('animated').addClass('fadeIn').addClass('animation-delay-2');
 					animate($right, '-' + $right.css('width'), 'right'); // Animation
 					setTimeout(function() { rightActive = true; }, 400); // Set active variables.
 				}
@@ -265,16 +265,16 @@
 					leftActive = false;
 				}
 				if (rightActive) {
-					animate($right, '0px', 'right'); // Animation
+					animate($right, '0px', 'right'); 
 					rightActive = false;
 				}
 			
-				setTimeout(function() { // Wait for closing animation to finish.
+				setTimeout(function() {
 					$('html').removeClass('slidebar-active slidebar-active-left slidebar-active-right'); // Remove active classes.
-					if ($left) $left.removeClass('slidebar-active');
-					if ($right) $right.removeClass('slidebar-active');
+					if ($left) $left.removeClass('slidebar-active').removeClass('animated').removeClass('fadeIn').removeClass('animation-delay-2');
+					if ($right) $right.removeClass('slidebar-active').removeClass('animated').removeClass('fadeIn').removeClass('animation-delay-2');
 					if (link) window.location = link; // If a link has been passed to the function, go to it.
-				}, 400);
+				}, 1);
 			}
 		}
 		
