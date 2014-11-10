@@ -22,8 +22,8 @@ test:
 
 production:
   adapter: postgresql
-  database: inforing_servi56
+  database: inforing_servi61
   host: postgresql2.locum.ru
-  username: inforing_servi56
-  password: XgxQXRJPg
+  username: inforing_servi61
+  password: U2YY7TpG
   encoding: utf8
