@@ -2,7 +2,7 @@
 
 .repairs
 	.row
-		- @repairs.order('created_at ASC').each do |r|
+		- @repairs.order('title ASC').each do |r|
 			.col-md-3.item.text-center
 				= link_to repair_path(r), class: "center-block", target: "_top" do
 					= image_tag r.image.url(:medium), alt: "#{r.title}", class: "animated fadeIn animation-delay-3 img-responsive center-block"  
