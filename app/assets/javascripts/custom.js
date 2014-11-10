@@ -16,6 +16,10 @@
 		});
 		$('#accordion').on('show.bs.collapse', function () {
 		  $('#accordion .in').collapse('hide');
+		  $('.panel').addClass('animated').addClass('swing').addClass('animation-delay-10');
+		  setTimeout(function() {
+		  	$('.panel').removeClass('animated').removeClass('swing').removeClass('animation-delay-10');
+		  }, 2000);
 		});
 		
 		$("li > a.dropdown-toggle").click(function(e) {

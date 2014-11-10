@@ -124,7 +124,8 @@
 /* Clients */
 
 .clients {
-	img {  
+	h3, img {  
+		font-weight: bold;
     -webkit-filter: grayscale(100%);
 	  -moz-filter: grayscale(100%);
 	  -ms-filter: grayscale(100%);
@@ -139,6 +140,7 @@
     transition: all 1s ease;
 
     &:hover {
+    	cursor: pointer;
     	-webkit-filter: grayscale(0%);
 		  -moz-filter: grayscale(0%);
 		  -ms-filter: grayscale(0%);
