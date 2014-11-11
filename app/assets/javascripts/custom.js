@@ -2,6 +2,17 @@
   $(document).ready(function() {
     $.slidebars();
 
+    var heightPrice = [];
+    $('.repair .pricing .content li.service_id').each(function(i) {
+    	heightPrice.push($(this).height());
+  	});
+  	$('.repair .pricing .content li.price_id').each(function(i) {
+  		var fix = i % heightPrice.length; 
+
+    	$(this).height(heightPrice[fix]);
+  	});
+
+
 	  $(".collapseOne").on("click", function() {
 		  setTimeout(function() {
 		  	$("#collapseOne").collapse('show');

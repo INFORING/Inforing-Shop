@@ -41,7 +41,7 @@
 										h3.title Услуги
 									ul.content
 										- i.services.order('created_at ASC').each do |s|
-											li.service
+											li.service_id
 												= s.title
 												- if admin?
 													= link_to edit_service_path(s, item_id: i.id), remote: true do 
