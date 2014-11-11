@@ -5,36 +5,36 @@
 	  $(".collapseOne").on("click", function() {
 		  setTimeout(function() {
 		  	$("#collapseOne").collapse('show');
-		  	$('#collapseOne').addClass('animated').addClass('tada').addClass('animation-delay-4');
+		  	$('#collapseOne').addClass('animated').addClass('bounceIn').addClass('animation-delay-4');
 			  setTimeout(function() {
-			  	$('#collapseOne').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  	$('#collapseOne').removeClass('animated').removeClass('bounceIn').removeClass('animation-delay-4');
 			  }, 2000);
 		  }, 1000);
 		});
 		$(".collapseTwo").on("click", function() {
 		  setTimeout(function() {
 		  	$("#collapseTwo").collapse('show');
-		  	$('#collapseTwo').addClass('animated').addClass('tada').addClass('animation-delay-4');
+		  	$('#collapseTwo').addClass('animated').addClass('bounceIn').addClass('animation-delay-4');
 			  setTimeout(function() {
-			  	$('#collapseTwo').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  	$('#collapseTwo').removeClass('animated').removeClass('bounceIn').removeClass('animation-delay-4');
 			  }, 2000);
 		  }, 1000);
 		});
 		$(".collapseThree").on("click", function() {
 		  setTimeout(function() {
 		  	$("#collapseThree").collapse('show');
-		  	$('#collapseThree').addClass('animated').addClass('tada').addClass('animation-delay-4');
+		  	$('#collapseThree').addClass('animated').addClass('bounceIn').addClass('animation-delay-4');
 			  setTimeout(function() {
-			  	$('#collapseThree').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  	$('#collapseThree').removeClass('animated').removeClass('bounceIn').removeClass('animation-delay-4');
 			  }, 2000);
 		  }, 1000);
 		});
 		$(".collapseFour").on("click", function() {
 		  setTimeout(function() {
 		  	$("#collapseFour").collapse('show');
-		  	$('#collapseFour').addClass('animated').addClass('tada').addClass('animation-delay-4');
+		  	$('#collapseFour').addClass('animated').addClass('bounceIn').addClass('animation-delay-4');
 			  setTimeout(function() {
-			  	$('#collapseFour').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  	$('#collapseFour').removeClass('animated').removeClass('bounceIn').removeClass('animation-delay-4');
 			  }, 2000);
 		  }, 1000);
 		});
