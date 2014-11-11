@@ -6,6 +6,7 @@
     $('.repair .pricing .content li.service_id').each(function(i) {
     	heightPrice.push($(this).height());
     	console.log(heightPrice.length);
+    	console.log($(this).text());
   	});
   	$('.repair .pricing .content li.price_id').each(function(i) {
   		var fix = i % heightPrice.length; 
