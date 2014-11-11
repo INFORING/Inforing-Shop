@@ -5,6 +5,7 @@
     var heightPrice = [];
     $('.repair .pricing .content li.service_id').each(function(i) {
     	heightPrice.push($(this).height());
+    	console.log(heightPrice.length);
   	});
   	$('.repair .pricing .content li.price_id').each(function(i) {
   		var fix = i % heightPrice.length; 
