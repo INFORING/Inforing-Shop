@@ -3,23 +3,43 @@
     $.slidebars();
 
 	  $(".collapseOne").on("click", function() {
-		  $("#collapseOne").collapse('show');
+		  setTimeout(function() {
+		  	$("#collapseOne").collapse('show');
+		  	$('#collapseOne').addClass('animated').addClass('tada').addClass('animation-delay-4');
+			  setTimeout(function() {
+			  	$('#collapseOne').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  }, 2000);
+		  }, 1000);
 		});
 		$(".collapseTwo").on("click", function() {
-		  $("#collapseTwo").collapse('show');
+		  setTimeout(function() {
+		  	$("#collapseTwo").collapse('show');
+		  	$('#collapseTwo').addClass('animated').addClass('tada').addClass('animation-delay-4');
+			  setTimeout(function() {
+			  	$('#collapseTwo').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  }, 2000);
+		  }, 1000);
 		});
 		$(".collapseThree").on("click", function() {
-		  $("#collapseThree").collapse('show');
+		  setTimeout(function() {
+		  	$("#collapseThree").collapse('show');
+		  	$('#collapseThree').addClass('animated').addClass('tada').addClass('animation-delay-4');
+			  setTimeout(function() {
+			  	$('#collapseThree').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  }, 2000);
+		  }, 1000);
 		});
 		$(".collapseFour").on("click", function() {
-		  $("#collapseFour").collapse('show');
+		  setTimeout(function() {
+		  	$("#collapseFour").collapse('show');
+		  	$('#collapseFour').addClass('animated').addClass('tada').addClass('animation-delay-4');
+			  setTimeout(function() {
+			  	$('#collapseFour').removeClass('animated').removeClass('tada').removeClass('animation-delay-4');
+			  }, 2000);
+		  }, 1000);
 		});
 		$('#accordion').on('show.bs.collapse', function () {
 		  $('#accordion .in').collapse('hide');
-		  $('.panel').addClass('animated').addClass('swing').addClass('animation-delay-10');
-		  setTimeout(function() {
-		  	$('.panel').removeClass('animated').removeClass('swing').removeClass('animation-delay-10');
-		  }, 2000);
 		});
 		
 		$("li > a.dropdown-toggle").click(function(e) {
