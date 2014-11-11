@@ -8,6 +8,7 @@
   	});
   	$('.repair .pricing .content li.price_id').each(function(i) {
   		var fix = i % heightPrice.length; 
+  		alert(fix);
 
     	$(this).height(heightPrice[fix]);
   	});
