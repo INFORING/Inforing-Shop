@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :models
   resources :services
   resources :prices
+  resources :news
   resources :sessions, only: [:new, :create, :destroy]
 
   root 'pages#home'
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   match '/contact', to: 'pages#contact', via: 'get'
   match '/admin', to: 'sessions#new', via: 'get', as: :sign_in
   match '/feedback', to: 'pages#feedback', via: 'get', as: :feedback
+  match '/callback', to: 'pages#call', via: 'get', as: :callback
 end

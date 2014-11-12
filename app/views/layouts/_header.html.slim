@@ -22,14 +22,14 @@ header.hidden-xs
 					i.fa.fa-phone-square
 					|  Обратный звонок
 				.dropdown-menu.dropdown-menu-right.dropdown-call-box.animated.fadeInUp
-					form role="form" 
-						h4 Обратный звонок
-						.form-group
+					h4 Обратный звонок
+					.form-group
+					  = form_tag callback_path, method: :get do
 							.input-group
 								span.input-group-addon
 									i.fa.fa-phone
-								input.form-control placeholder="Номер телефона" type="text" 
-							button.btn.btn-primary.pull-right type="submit" Отправить
+								= text_field_tag :phone, nil, placeholder: "Номер телефона", class: "form-control"
+							= submit_tag "Отправить",class: "btn btn-primary pull-right" 
 							.clearfix
 			h3.animated.bounceInRight.animation-delay-10
 				small 8 (8422)

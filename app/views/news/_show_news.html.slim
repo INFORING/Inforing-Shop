@@ -1,0 +1,11 @@
+- @news.each do |n|
+	p
+	= image_tag n.image.url(:thumb)
+	= n.title
+	= n.description
+	|   
+	= n.created_at.strftime("Добавлено %d.%m.%Y")
+	|   
+	= link_to "Редактировать", edit_news_path(n),remote: true
+	|   
+	= link_to "Удалить", news_path(n),method: :delete,remote:true

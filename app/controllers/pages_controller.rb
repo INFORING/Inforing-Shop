@@ -1,11 +1,13 @@
 class PagesController < ApplicationController
   def home
   	@repairs = Repair.all
+    @news = News.all
   end
 
   def contact
   	@repairs = Repair.all
   	add_breadcrumb "Контакты", :contact_path
+    @news = News.all
   end
 
   def feedback
@@ -15,5 +17,12 @@ class PagesController < ApplicationController
     respond_to do |format|
     	format.js
     end
+  end
+
+  def call
+    unless params[:phone].blank?
+      Mailer.call(params[:phone]).deliver
+    end
+    redirect_to root_url
   end
 end

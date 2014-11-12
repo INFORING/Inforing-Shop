@@ -1,0 +1,7 @@
+= @show_news.title
+p
+= image_tag @show_news.image.url(:medium)
+p
+= @show_news.description
+p
+= @show_news.created_at.strftime("Добавлено %d.%m.%Y")

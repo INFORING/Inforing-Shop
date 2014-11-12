@@ -8,6 +8,7 @@ class RepairsController < ApplicationController
   end
 
   def index
+    @news = News.all
     @repairs = Repair.all
   end
 
@@ -27,6 +28,7 @@ class RepairsController < ApplicationController
     @repair = Repair.find(params[:id])
     @repairs = Repair.all
     @items = @repair.items
+    @news = News.all
     add_breadcrumb @repair.title, repair_path(@repair)
   end
 

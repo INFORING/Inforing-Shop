@@ -12,24 +12,14 @@ aside.footer
             = link_to "Цены", repairs_path, target: "_top"
       .col-md-4.news
         h3.title Новости
-        .media
-          = link_to image_tag("news.jpg", alt: "Принтеры", class: "img-responsive media-object", width: 75, height: 75), "#", class: "pull-left", target: "_top"
-          .media-body
-            h4.media-heading
-              = link_to "Новость 1", "#", target: "_top"
-            small 18 августа 2013
-        .media
-          = link_to image_tag("news.jpg", alt: "Принтеры", class: "img-responsive media-object", width: 75, height: 75), "#", class: "pull-left", target: "_top"
-          .media-body
-            h4.media-heading
-              = link_to "Новость 2", "#", target: "_top"
-            small 18 августа 2013
-        .media
-          = link_to image_tag("news.jpg", alt: "Принтеры", class: "img-responsive media-object", width: 75, height: 75), "#", class: "pull-left", target: "_top"
-          .media-body
-            h4.media-heading
-              = link_to "Новость 3", "#", target: "_top"
-            small 18 августа 2013
+        - @news.each do |n|
+          .media
+            = link_to image_tag(n.image.url, alt: "Принтеры", class: "img-responsive media-object", width: 75, height: 75), news_path(n), class: "pull-left"
+            .media-body
+              h4.media-heading
+                = link_to n.title, news_path(n)
+              small 
+                = n.created_at.strftime("%d.%m.%Y")
       .col-md-4.contacts
         h3.title Контакты
         address
