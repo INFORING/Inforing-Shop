@@ -10,7 +10,7 @@
 	  	$('.repair .item.active .pricing .content li.price_id').each(function(i) {
 	  		var fix = i % heightPrice.length; 
 
-	    	$(this).css('height', heightPrice[fix]);
+	    	$(this).height(heightPrice[fix]);
 	  	});
   	}
   	fix();
