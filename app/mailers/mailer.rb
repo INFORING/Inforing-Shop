@@ -3,11 +3,11 @@ class Mailer < ActionMailer::Base
   	@name = name
   	@email = email
   	@text = text
-  	mail(to: "sylorweb@gmail.com", subject: "Обратная связь")
+  	mail(to: "repair@inforing73.net", subject: "Обратная связь")
   end
 
   def call(phone)
- 	@phone = phone
- 	mail(to: "nameless7345@gmail.com", subject: "Обратный звонок")
+	 	@phone = phone
+	 	mail(to: "call@inforing73.net", subject: "Обратный звонок")
   end
 end
