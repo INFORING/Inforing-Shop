@@ -9,8 +9,8 @@
 	  	});
 	  	$('.repair .item.active .pricing .content li.price_id').each(function(i) {
 	  		var fix = i % heightPrice.length; 
-	  		
-	    	$(this).css('min-height', heightPrice[fix]);
+
+	    	$(this).css('height', heightPrice[fix]);
 	  	});
   	}
   	fix();
