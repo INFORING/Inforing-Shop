@@ -11,6 +11,8 @@
 	  		var fix = i % heightPrice.length; 
 
 	    	$(this).height(heightPrice[fix]);
+	    	$(this).css('height', heightPrice[fix] - (heightPrice[fix] / 2 - 10));
+				$(this).css('margin-top', (heightPrice[fix] / 2 - 10));
 	  	});
   	}
   	fix();
