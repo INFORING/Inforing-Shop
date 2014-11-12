@@ -48,6 +48,10 @@
 														i.fa.fa-pencil
 													= link_to service_path(s, item_id: i.id), method: :delete, remote: true, data: { confirm: "Вы уверены удалить услугу #{s.title}?" } do
 														i.fa.fa-times
+												- else
+													= link_to edit_service_path(s, item_id: i.id), class: "invisible", remote: true do 
+														i.fa.fa-pencil
+
 
 
 							.col-md-8.col-sm-8.col-xs-8.col
