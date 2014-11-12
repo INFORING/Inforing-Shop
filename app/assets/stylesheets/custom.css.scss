@@ -817,20 +817,8 @@ header {
     position: relative;
     font-family: "Open Sans", sans-serif;
 
-    a {
-      display: block;
-      padding: 5px 15px;
-      color: #333;
-      font-size: 1em;
-      font-weight: 500 !important;
-      text-decoration: none;
-
-      i {
-        margin-right: 10px;
-        font-size: 1.1em;
-      }
-
-      &:after {
+    &.plus {
+      a:after {
         font-family: 'FontAwesome';
         content: "\f067";
         font-size: 1.2em;
@@ -842,6 +830,36 @@ header {
         margin-right: -15px;
         width: 33px;
         text-align: center;
+      }
+    }
+
+    &.minus {
+      a:after {
+        font-family: 'FontAwesome';
+        content: "\f068";
+        font-size: 1.2em;
+        float: right;
+        background-color: #5ebe1e;
+        color: #fff;
+        padding: 5px 0px;
+        margin-top: -5px;
+        margin-right: -15px;
+        width: 33px;
+        text-align: center;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 5px 15px;
+      color: #333;
+      font-size: 1em;
+      font-weight: 500 !important;
+      text-decoration: none;
+
+      i {
+        margin-right: 10px;
+        font-size: 1.1em;
       }
     }
   }
