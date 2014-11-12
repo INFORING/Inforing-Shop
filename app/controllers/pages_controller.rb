@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
   def home
   	@repairs = Repair.all
-    @news = News.all
+    @news = News.last(3)
   end
 
   def contact
   	@repairs = Repair.all
   	add_breadcrumb "Контакты", :contact_path
-    @news = News.all
+    @news = News.last(3)
   end
 
   def feedback
