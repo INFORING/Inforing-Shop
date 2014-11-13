@@ -801,12 +801,9 @@ header {
   }
 }
 
-.panel {
-  border-radius: 0;
-}
-
 .panel-default {
   border-color: #e5e5e5;
+  border-radius: 0;
   
   .panel-heading {
     border-color: #e5e5e5;
@@ -861,6 +858,12 @@ header {
         margin-right: 10px;
         font-size: 1.1em;
       }
+    }
+  }
+
+  .panel-footer {
+    i {
+      margin: 0 5px;
     }
   }
 }

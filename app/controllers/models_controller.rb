@@ -11,16 +11,16 @@ class ModelsController < ApplicationController
     @model = Model.new(title: params[:title], item_id: params[:item_id].to_i) 
     @repair = Item.find(@model.item_id).repair
     @items = @repair.items
-      if @model.save
-   	    unless params[:services].nil?
-   	 	  	params[:services].each do |service, cost|
-       	 	  Price.create(model_id: @model.id, service_id: service.to_i, cost: cost )
-        	end
+    if @model.save
+ 	    unless params[:services].nil?
+ 	 	  	params[:services].each do |service, cost|
+     	 	  Price.create(model_id: @model.id, service_id: service.to_i, cost: cost )
       	end
-        respond_to do |format|               
-        	format.js
-      	end 
-      end
+    	end
+      respond_to do |format|               
+      	format.js
+    	end 
+    end
   end
 
   def edit

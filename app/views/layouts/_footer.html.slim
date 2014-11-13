@@ -10,11 +10,13 @@ aside.footer
             = link_to "Контакты", contact_path, target: "_top"
           li
             = link_to "Цены", repairs_path, target: "_top"
+          li
+            = link_to "Новости", news_index_path, target: "_top"
       .col-md-4.news
         h3.title Новости
         - @news.each do |n|
           .media
-            = link_to image_tag(n.image.url, alt: "n.description", class: "img-responsive media-object", width: 75, height: 75), news_path(n), class: "pull-left"
+            = link_to image_tag(n.image.url(:thumb), alt: "n.description", class: "img-responsive media-object", width: 75, height: 75), news_path(n), class: "pull-left"
             .media-body
               h4.media-heading
                 = link_to n.title, news_path(n)

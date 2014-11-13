@@ -1,4 +1,6 @@
 class NewsController < ApplicationController
+	add_breadcrumb "Новости", :news_index_path, :only => %w(index show)
+
 	def new
 		@new_news = News.new
 		respond_to do |format|
@@ -18,12 +20,14 @@ class NewsController < ApplicationController
 
 	def show
 		@show_news = News.find(params[:id])
-		@news = News.all
+		@news = News.last(3)
 		@repairs = Repair.all
+		add_breadcrumb @show_news.title, news_path(@show_news)
 	end
 
 	def index
-		@news = News.all
+		@show_news = News.paginate(page: params[:page], per_page: 3).order('created_at DESC')
+		@news = News.last(3)
 		@repairs = Repair.all
 	end
 

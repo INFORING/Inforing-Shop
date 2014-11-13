@@ -1,14 +1,14 @@
 #newNewsModal.modal.fade aria-hidden="true" aria-labelledby="newNewsModalLabel" role="dialog" tabindex="-1" 
-	.modal-dialog.modal-sm
+	.modal-dialog.modal-lg
 		.modal-content
 			.modal-header
 				button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
 				h4#newNewsModalLabel.modal-title Добавление новости
 			= form_for @new_news,remote: true, multipart: true do |f|
 				.modal-body
-				  = f.text_field :title,placeholder: "Название", class: "form-control"
-				  = f.text_area :description,placeholder: "Текст новости", class: "form-control"
-				  = f.text_field :tags,placeholder: "Тэги", class: "form-control"
+				  = f.text_field :title ,placeholder: "Название", class: "form-control"
+				  = f.text_area :description, rows: "10", placeholder: "Текст новости", class: "form-control"
+				  = f.text_field :tags, placeholder: "Тэги", class: "form-control"
 				  = f.file_field :image, class: "form-control"
 				
 				.modal-footer
