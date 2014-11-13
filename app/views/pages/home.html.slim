@@ -4,28 +4,28 @@
 section.carousel-section
   #carousel-example-generic.carousel.slide data-interval="8000" data-ride="carousel" 
     ol.carousel-indicators
-      li data-slide-to="0" data-target="#carousel-example-generic" 
+      li.active data-slide-to="0" data-target="#carousel-example-generic" 
       li data-slide-to="1" data-target="#carousel-example-generic" 
-      li.active data-slide-to="2" data-target="#carousel-example-generic"
+      li data-slide-to="2" data-target="#carousel-example-generic"
     .carousel-inner
-      .item
+      .item.active
         .container
           .row
             .col-md-6.col-sm-7
               .carousel-caption
                 .carousel-text
                   h1.animated.fadeInDownBig.animation-delay-7.carousel-title Профилактика системы охлаждения
-                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Сделаем Ваш ноутбук холодным!
+                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Продлевает жизнь Вашему ноутбуку!
                   ul.list-unstyled.carousel-list
                     li.animated.bounceInLeft.animation-delay-11
                       i.fa.fa-check
                       |  Читска от пыли
                     li.animated.bounceInLeft.animation-delay-13
                       i.fa.fa-check
-                      |  Замена термо-элементов
+                      |  Замена термо-интерфейсов
                     li.animated.bounceInLeft.animation-delay-15
                       i.fa.fa-check
-                      |  Диагностика температурного режима
+                      |  Время работы: от 30 минут
                   p.animated.fadeInUpBig.animation-delay-17
                     | Обращайтесь к нам! Мы обязательно поможем Вашему ноутбуку.
             .col-md-6.col-sm-5.hidden-xs.carousel-img-wrap
@@ -37,46 +37,46 @@ section.carousel-section
             .col-md-6.col-sm-7
               .carousel-caption
                 .carousel-text
-                  h1.animated.fadeInDownBig.animation-delay-7.carousel-title Профилактика системы охлаждения
-                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Сделаем Ваш ноутбук холодным!
+                  h1.animated.fadeInDownBig.animation-delay-7.carousel-title Срочный ремонт ноутбуков
+                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Диагностика от 1 часа!
                   ul.list-unstyled.carousel-list
                     li.animated.bounceInLeft.animation-delay-11
                       i.fa.fa-check
-                      |  Читска от пыли
+                      |  Справимся с проблемами любой сложности
                     li.animated.bounceInLeft.animation-delay-13
                       i.fa.fa-check
-                      |  Замена термо-элементов
+                      |  При замене матрицы гарантия 365 дней
                     li.animated.bounceInLeft.animation-delay-15
                       i.fa.fa-check
-                      |  Диагностика температурного режима
+                      |  Восстановление ноутбука после залития
                   p.animated.fadeInUpBig.animation-delay-17
                     | Обращайтесь к нам! Мы обязательно поможем Вашему ноутбуку.
             .col-md-6.col-sm-5.hidden-xs.carousel-img-wrap
               .carousel-img
-                = image_tag "http://razonartificial.com/themes/reason/v1/img/demo/pre.png", alt: "Чистка от пыли", class: "animated fadeIn animation-delay-3 img-responsive" 
-      .item.active
+                = image_tag "repairnotebook.png", alt: "Срочный ремонт ноутбуков", class: "animated fadeIn animation-delay-3 img-responsive" 
+      .item
         .container
           .row
             .col-md-6.col-sm-7
               .carousel-caption
                 .carousel-text
-                  h1.animated.fadeInDownBig.animation-delay-7.carousel-title Профилактика системы охлаждения
-                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Сделаем Ваш ноутбук холодным!
+                  h1.animated.fadeInDownBig.animation-delay-7.carousel-title Быстрый ремонт iPhone
+                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle 80% ремонтов в течении часа
                   ul.list-unstyled.carousel-list
                     li.animated.bounceInLeft.animation-delay-11
                       i.fa.fa-check
-                      |  Читска от пыли
+                      |  Оригинальные запчасти
                     li.animated.bounceInLeft.animation-delay-13
                       i.fa.fa-check
-                      |  Замена термо-элементов
+                      |  Профессиональное оборудование
                     li.animated.bounceInLeft.animation-delay-15
                       i.fa.fa-check
-                      |  Диагностика температурного режима
+                      |  Гарантия до 1 года!
                   p.animated.fadeInUpBig.animation-delay-17
-                    | Обращайтесь к нам! Мы обязательно поможем Вашему ноутбуку.
+                    | Обращайтесь к нам! Мы обязательно поможем Вашему iPhone.
             .col-md-6.col-sm-5.hidden-xs.carousel-img-wrap
               .carousel-img
-                = image_tag "http://razonartificial.com/themes/reason/v1/img/demo/pre.png", alt: "Чистка от пыли", class: "animated fadeIn animation-delay-3 img-responsive"
+                = image_tag "repairiphone.png", alt: "Ремонт iPhone", class: "animated fadeIn animation-delay-3 img-responsive"
     a.left.carousel-control data-slide="prev" href="#carousel-example-generic" 
       span.fa.fa-chevron-left.fa-2x
     a.right.carousel-control data-slide="next" href="#carousel-example-generic" 
