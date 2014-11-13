@@ -13,7 +13,7 @@
 										= link_to edit_news_path(n), remote: true do
 											i.fa.fa-pencil
 									span  
-										= link_to news_path(n), method: :delete, remote:true do
+										= link_to news_path(n), method: :delete, remote:true, data: { confirm: "Вы уверены удалить новость #{n.title}?" } do
 											i.fa.fa-times
 							.row
 								.col-md-6
@@ -37,4 +37,3 @@
 									= link_to news_path(n), class: "pull-right" do
 										| Подробнее
 										
-	= will_paginate @show_news

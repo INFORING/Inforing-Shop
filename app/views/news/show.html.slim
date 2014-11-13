@@ -11,7 +11,7 @@
 	        	= @show_news.title
 	        = image_tag @show_news.image.url(:medium), class: "img-responsive"
 	        p
-	          = @show_news.description
+	          = simple_format(@show_news.description)
 	      section
 	        .panel.panel-default
 	          .panel-body
