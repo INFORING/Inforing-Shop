@@ -15,7 +15,7 @@ section.carousel-section
               .carousel-caption
                 .carousel-text
                   h1.animated.fadeInDownBig.animation-delay-7.carousel-title Профилактика системы охлаждения
-                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Продлевает жизнь Вашему ноутбуку!
+                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Увеличивает срок службы вашего ноутбука!
                   ul.list-unstyled.carousel-list
                     li.animated.bounceInLeft.animation-delay-11
                       i.fa.fa-check
@@ -61,7 +61,7 @@ section.carousel-section
               .carousel-caption
                 .carousel-text
                   h1.animated.fadeInDownBig.animation-delay-7.carousel-title Срочный ремонт iPhone
-                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Выберите стоимость ремонта Сами!
+                  h2.animated.fadeInDownBig.animation-delay-5.carousel-subtitle Вы сами определяете стоимость ремонта!
                   ul.list-unstyled.carousel-list
                     li.animated.bounceInLeft.animation-delay-11
                       i.fa.fa-check
@@ -111,7 +111,7 @@ section.welcome
     .row
       .col-md-4.text
         h3 Добро пожаловать!
-        p Мы осуществляем ремонт любой сложности техники Apple, ноутбуков, планшетных компьютеров, электронных книг, смартфонов, сотовых телефонов, CIP телефонов, игровых приставок, компьютеров, мониторов, телевизоров, сетевого оборудования, навигаторов, видеорегистраторов, оргтехники.
+        p Мы осуществляем ремонт любой сложности техники Apple, ноутбуков, планшетных компьютеров, электронных книг, смартфонов, сотовых телефонов, SIP телефонов, игровых приставок, компьютеров, мониторов, телевизоров, сетевого оборудования, навигаторов, видеорегистраторов, оргтехники.
         ul.icon-devices
           li.active
             = link_to "#desktop", "data-toggle" => "tab" do
@@ -137,19 +137,19 @@ section.welcome
       .col-md-8.img
         .tab-content
           #desktop.tab-pane.active
-            = image_tag "desktop.png", alt: "Ремонт компьютеров", class: "img-responsive"
+            = link_to image_tag("desktop.png", alt: "Ремонт компьютеров", class: "img-responsive"), repair_path(3)
           #laptop.tab-pane
-            = image_tag "laptop.png", alt: "Ремонт ноутбуков", class: "img-responsive" 
+            = link_to image_tag("laptop.png", alt: "Ремонт ноутбуков", class: "img-responsive"), repair_path(4) 
           #tablet.tab-pane
-            = image_tag "tablet.png", alt: "Ремонт планшетов", class: "img-responsive"
+            = link_to image_tag("tablet.png", alt: "Ремонт планшетов", class: "img-responsive"), repair_path(5)
           #mobile.tab-pane
-            = image_tag "mobile.png", alt: "Ремонт телефонов", class: "img-responsive"
+            = link_to image_tag("mobile.png", alt: "Ремонт телефонов", class: "img-responsive"), repair_path(2)
           #console.tab-pane
-            = image_tag "console.png", alt: "Ремонт игровых консолей", class: "img-responsive"
+            = link_to image_tag("console.png", alt: "Ремонт игровых консолей", class: "img-responsive"), repair_path(6)
           #navigator.tab-pane
-            = image_tag "navigator.png", alt: "Ремонт навигаторов", class: "img-responsive"
+            = link_to image_tag("navigator.png", alt: "Ремонт навигаторов", class: "img-responsive"), repair_path(5)
           #printer.tab-pane
-            = image_tag "printer.png", alt: "Ремонт принтеров", class: "img-responsive"
+            = link_to image_tag("printer.png", alt: "Ремонт принтеров", class: "img-responsive"), repair_path(7)
 
 .container
   section#about.about
@@ -182,7 +182,7 @@ section.welcome
             #collapseTwo.panel-collapse.collapse
               .panel-body
                 P
-                  | Условия работы службы доставки:
+                  | Условия работы службы по доставке:
                   ul
                     li Вы можете воспользоваться услугами бесплатной курьерской службы для доставки  ноутбука в сервис-центр и обратно.
                     li Доставка осуществляется в пределах города.
@@ -202,7 +202,7 @@ section.welcome
                 p 
                   | Вам не надо никуда ехать и тащить с собой системный блок, а потом ещё и возвращаться за ним в сервисный центр. Всего один телефонный звонок или
                   = link_to " отправка заявки ", contact_path 
-                  | отправка заявки через Интернет — и уже в назначенное время специалист стоит на пороге вашего дома и немедленно приступает к работе. И тут не вы будете подстраиваться под кого-то, а будете определять, в какой день и в какое время необходимо будет произвести ремонт.
+                  | через Интернет — и уже в назначенное время специалист стоит на пороге вашего дома и немедленно приступает к работе. И тут не вы будете подстраиваться под кого-то, а будете определять, в какой день и в какое время необходимо будет произвести ремонт.
                 p Также не следует забывать про гарантию, которую выдают специалисты после произведённого ремонта.
           .panel.panel-default
             .panel-heading.plus
