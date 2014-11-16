@@ -5,27 +5,25 @@
 .contact
 	.container
 		.row
-			.col-md-12
+			.col-md-8
 				h2.section-title 
 					| Связаться с нами
-					/dropdown.pull-right.animated.bounceInRight.animation-delay-4
-						a.dropdown-toggle data-toggle="dropdown" href="#" 
+			.col-md-4
+				.call.pull-right			
+					= link_to "javascript:void(0);", class: "animated bounceInRight animation-delay-4" do
+						h3
 							i.fa.fa-phone-square
 							|  Обратный звонок
-						.dropdown-menu.dropdown-menu-right.dropdown-call-box.animated.fadeInUp
-							h4 Обратный звонок
-							.form-group
-							  = form_tag callback_path, method: :get do
-									.input-group
-										span.input-group-addon
-											i.fa.fa-phone
-										= text_field_tag :phone, nil, placeholder: "Номер телефона", class: "form-control"
-									= submit_tag "Отправить",class: "btn btn-primary pull-right" 
-									.clearfix
+						.form-group.pull-right.animated.fadeInUp
+							= form_tag callback_path, method: :get do
+								.input-group
+									= text_field_tag :phone, nil, placeholder: "Номер телефона", class: "form-control" 
+									span.input-group-btn
+										= submit_tag "Отправить",class: "btn btn-primary" 		
 			.col-md-8
 				section
-				  #feedback
-					  = render 'pages/feedback_form'
+					#feedback
+						= render 'pages/feedback_form'
 			.col-md-4
 				section
 					.panel.panel-primary

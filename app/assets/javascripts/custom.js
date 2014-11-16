@@ -16,6 +16,10 @@
   	}
   	fix();
 
+  	$(".call").on("click", function() {
+  		$("a").addClass("active");
+
+  	});
 
 	  $(".collapseOne").on("click", function() {
 		  setTimeout(function() {

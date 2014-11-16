@@ -203,16 +203,39 @@
     }
   }
 
+
   .dropdown-call-box {
     overflow: hidden;
     padding: 10px;
     margin: 0;
-    min-width: 300px;
+    min-width: 400px;
     box-shadow: none;
+    top: 0;
+  	right: 110%;
+  	left: auto;
 
     .btn {
       margin-top: 10px;
     }
+  }
+
+  .call {
+  	a {
+  		.form-group {
+  			display: none;
+  			margin: 0;
+  		}
+
+  		&.active {
+  			.form-group {
+	  			display: block;
+	  		}
+
+	  		h3 {
+	  			display: none;
+	  		}
+  		}
+  	}
   }
 }
 
