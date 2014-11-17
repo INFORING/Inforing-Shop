@@ -14,4 +14,11 @@ Rails.application.routes.draw do
   match '/admin', to: 'sessions#new', via: 'get', as: :sign_in
   match '/feedback', to: 'pages#feedback', via: 'get', as: :feedback
   match '/callback', to: 'pages#call', via: 'get', as: :callback
+  match '/repair_computer', to: 'pages#repair_computer', via: 'get'
+  match '/repair_print', to: 'pages#repair_print', via: 'get'
+  match '/repair_apple', to: 'pages#repair_apple', via: 'get'
+  match '/repair_mobile', to: 'pages#repair_mobile', via: 'get'
+  match '/repair_game', to: 'pages#repair_game', via: 'get'
+  match '/repair_notebook', to: 'pages#repair_notebook', via: 'get'
+  match '/repair_tablet', to: 'pages#repair_tablet', via: 'get'
 end
