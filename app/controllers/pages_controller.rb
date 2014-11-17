@@ -26,6 +26,36 @@ class PagesController < ApplicationController
     redirect_to root_url
   end
 
+  def payment
+    @repairs = Repair.all
+    add_breadcrumb "Предоплата", :payment_path
+    @news = News.last(3)
+  end
+
+  def pay
+    unless params[:value].blank?
+      @value = params[:value].to_i + (params[:value].to_i / 20) + 15
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def order
+    @repairs = Repair.all
+    add_breadcrumb "Заказ запчастей", :payment_path
+    @news = News.last(3)
+  end
+
+  def order_parts
+    unless params[:name].blank? or params[:email].blank? or params[:phone].blank? or params[:model].blank? or params[:part_number].blank?
+      Mailer.order_parts(params[:name], params[:email], params[:phone], params[:model], params[:part_number], params[:image]).deliver
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def repair_computer
     redirect_to repair_path(3)
   end

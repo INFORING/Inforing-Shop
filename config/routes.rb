@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   match '/repair_game', to: 'pages#repair_game', via: 'get'
   match '/repair_notebook', to: 'pages#repair_notebook', via: 'get'
   match '/repair_tablet', to: 'pages#repair_tablet', via: 'get'
+  match '/payment', to: 'pages#payment', via: 'get'
+  match '/pay', to: 'pages#pay', via: 'get', as: :pay
+  match '/order', to: 'pages#order', via: 'get'
+  match '/order_parts', to: 'pages#order_parts', via: 'get', as: :order_parts
 end
