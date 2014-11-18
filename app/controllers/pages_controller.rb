@@ -48,8 +48,14 @@ class PagesController < ApplicationController
   end
 
   def order_parts
-    unless params[:name].blank? or params[:email].blank? or params[:phone].blank? or params[:model].blank? or params[:part_number].blank?
-      Mailer.order_parts(params[:name], params[:email], params[:phone], params[:model], params[:part_number], params[:image]).deliver
+    unless params[:name].blank? or params[:contacts].blank? or params[:description].blank?
+      images = []
+      unless params[:images].blank?  
+        params[:images].each do |image|
+          images << AttachedImage.create(image: image)
+        end
+      end    
+      Mailer.order_parts(params[:name],params[:contacts],params[:description],images).deliver
     end
     respond_to do |format|
       format.js

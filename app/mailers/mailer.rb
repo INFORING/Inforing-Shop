@@ -11,13 +11,15 @@ class Mailer < ActionMailer::Base
 	 	mail(to: "call@inforing73.net", subject: "Обратный звонок")
   end
 
-  def order_parts(name, email, phone, model, part_number, image)
+  def order_parts(name, contacts, description,images)
     @name = name
-    @email = email
-    @phone = phone
-    @model = model
-    @part_number = part_number
-    attachments["lol.jpg"] = File.read(image.url)
+    @contacts = contacts
+    @description = description
+    unless images.empty?  
+      images.each do |image|
+        attachments[image.image.original_filename] = File.read(image.image.path)
+      end
+    end
     mail(to: "call@inforing73.net", subject: "Заказ на запчасть")
   end
 end

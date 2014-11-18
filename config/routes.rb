@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   match '/payment', to: 'pages#payment', via: 'get'
   match '/pay', to: 'pages#pay', via: 'get', as: :pay
   match '/order', to: 'pages#order', via: 'get'
-  match '/order_parts', to: 'pages#order_parts', via: 'get', as: :order_parts
+  match '/order_parts', to: 'pages#order_parts', via: 'post', as: :order_parts
 end

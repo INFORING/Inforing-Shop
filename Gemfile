@@ -15,6 +15,7 @@ gem 'paperclip'
 gem 'rmagick'
 gem 'animate-rails'
 gem 'remotipart'
+gem 'mail'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
