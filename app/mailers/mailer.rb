@@ -18,8 +18,9 @@ class Mailer < ActionMailer::Base
     unless images.empty?  
       images.each do |image|
         attachments[image.image.original_filename] = File.read(image.image.path)
+        image.destroy
       end
     end
-    mail(to: "nameless7345@gmail.com", subject: "Заказ на запчасть")
+    mail(to: "call@inforing73.net", subject: "Заказ на запчасть")
   end
 end

@@ -13,6 +13,9 @@ class PagesController < ApplicationController
   def feedback
   	unless params[:name].blank? or params[:email].blank? or params[:text].blank? 
   		Mailer.feedback(params[:name],params[:email],params[:text]).deliver
+      flash[:success] = "Сообщение отправлено"
+    else
+      flash[:danger] = "Проверьте заполнены ли поля"
     end
     respond_to do |format|
     	format.js
@@ -22,8 +25,13 @@ class PagesController < ApplicationController
   def call
     unless params[:phone].blank?
       Mailer.call(params[:phone]).deliver
+      flash[:success] = "Запрос отправлен"
+    else
+      flash[:danger] = "Введите ваш телефон"
     end
-    redirect_to root_url
+    respond_to do |format|
+      format.js
+    end
   end
 
   def payment
@@ -56,6 +64,9 @@ class PagesController < ApplicationController
         end
       end    
       Mailer.order_parts(params[:name],params[:contacts],params[:description],images).deliver
+      flash[:succes] = "Заказ отправлен"
+    else
+      flash[:danger] = "Проверьте заполнены ли поля"
     end
     respond_to do |format|
       format.js

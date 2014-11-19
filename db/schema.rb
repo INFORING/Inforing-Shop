@@ -81,4 +81,21 @@ ActiveRecord::Schema.define(version: 20141118121102) do
     t.datetime "updated_at"
   end
 
+  create_table "sqlite_sp_functions", id: false, force: true do |t|
+    t.text "name"
+    t.text "text"
+  end
+
+  create_table "sqlite_vs_links_names", id: false, force: true do |t|
+    t.text "name"
+    t.text "alias"
+  end
+
+  create_table "sqlite_vs_properties", id: false, force: true do |t|
+    t.text "parentType"
+    t.text "parentName"
+    t.text "propertyName"
+    t.text "propertyValue"
+  end
+
 end
