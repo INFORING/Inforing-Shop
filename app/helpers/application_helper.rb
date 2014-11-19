@@ -48,4 +48,8 @@ module ApplicationHelper
       render "layouts/breadcrumbs"
     end
   end
+
+  def bootstrap_class_for flash_type
+    "alert-#{flash_type.to_s}"
+  end
 end
