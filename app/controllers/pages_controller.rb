@@ -64,7 +64,7 @@ class PagesController < ApplicationController
         end
       end    
       Mailer.order_parts(params[:name],params[:contacts],params[:description],images).deliver
-      flash[:succes] = "Заказ отправлен"
+      flash[:success] = "Заказ отправлен"
     else
       flash[:danger] = "Проверьте заполнены ли поля"
     end

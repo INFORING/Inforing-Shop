@@ -1267,6 +1267,15 @@ header {
   }
 }
 
+/* Flash */
+
+#flash {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: block;
+  z-index: 90000000;
+}
 
 
 /* Animation Delay */

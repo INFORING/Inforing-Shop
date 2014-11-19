@@ -21,6 +21,6 @@ class Mailer < ActionMailer::Base
         image.destroy
       end
     end
-    mail(to: "call@inforing73.net", subject: "Заказ на запчасть")
+    mail(to: "order@inforing73.net", subject: "Заказ на запчасть")
   end
 end
