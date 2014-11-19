@@ -51,7 +51,7 @@ class PagesController < ApplicationController
     unless params[:name].blank? or params[:contacts].blank? or params[:description].blank?
       images = []
       unless params[:images].blank?  
-        params[:images].each do |image|
+        params[:images].first(3).each do |image|
           images << AttachedImage.create(image: image)
         end
       end    
