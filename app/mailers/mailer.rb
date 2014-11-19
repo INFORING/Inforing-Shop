@@ -20,6 +20,6 @@ class Mailer < ActionMailer::Base
         attachments[image.image.original_filename] = File.read(image.image.path)
       end
     end
-    mail(to: "nameless7345@gmail.com", subject: "Заказ на запчасть")
+    mail(to: "call@inforing73.net", subject: "Заказ на запчасть")
   end
 end
