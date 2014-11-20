@@ -27,10 +27,10 @@
 									i.fa.fa-clock-o
 									= n.created_at.strftime("Добавлено %d.%m.%Y")
 									i.fa.fa-user
-									= link_to "Администратор", "#"
+									= link_to "Администратор", "javascript:void(0);"
 									i.fa.fa-folder-open
 									- n.tags.split().each do |t|
-										= link_to "#" do 
+										= link_to "javascript:void(0);" do 
 											= t
 											|  
 								.col-lg-2.col-md-3.col-sm-4

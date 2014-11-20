@@ -153,6 +153,10 @@
 /* -------------Contact--------------*/
 
 .contact {
+	textarea {
+    resize: none;
+	}
+
 	hr {
 		display: block;
 		border-top: 1px solid #ddd;

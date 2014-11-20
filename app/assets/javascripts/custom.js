@@ -2,6 +2,10 @@
   $(document).ready(function() {
     $.slidebars();
 
+    setTimeout(function() {
+	    $('div.alert').slideUp();
+	  }, 2000);
+
     function fix() {
 	    var heightPrice = [];
 	    $('.repair .item.active .pricing .content li.service_id').each(function(i) {
@@ -18,7 +22,6 @@
 
   	$(".call").on("click", function() {
   		$("a").addClass("active");
-
   	});
 
 	  $(".collapseOne").on("click", function() {

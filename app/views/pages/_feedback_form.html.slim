@@ -8,6 +8,6 @@ p Оставьте нам сообщение и наш менеджер обяз
 		= text_field_tag :email, nil, class: "form-control"
 	.form-group
 		= label_tag :text, "Сообщение"
-		= text_area_tag :text, nil, class: "form-control"
+		= text_area_tag :text, nil, rows: "6", class: "form-control"
 	= submit_tag "Отправить", class: "btn btn-ar btn-primary" 
 	.clearfix

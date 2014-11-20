@@ -26,7 +26,7 @@ class NewsController < ApplicationController
 	end
 
 	def index
-		@show_news = News.paginate(page: params[:page], per_page: 3).order('created_at DESC')
+		@show_news = News.order('created_at DESC').paginate(page: params[:page], per_page: 3)
 		@news = News.last(3)
 		@repairs = Repair.all
 	end

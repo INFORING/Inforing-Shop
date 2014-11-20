@@ -15,7 +15,7 @@
 							i.fa.fa-phone-square
 							|  Обратный звонок
 						.form-group.pull-right.animated.fadeInUp
-							= form_tag callback_path, method: :get, remote: true do
+							= form_tag callback_path, method: :get do
 								.input-group
 									= text_field_tag :phone, nil, placeholder: "Номер телефона", class: "form-control" 
 									span.input-group-btn

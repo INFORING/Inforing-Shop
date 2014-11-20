@@ -29,9 +29,7 @@ class PagesController < ApplicationController
     else
       flash[:danger] = "Введите ваш телефон"
     end
-    respond_to do |format|
-      format.js
-    end
+    redirect_to :back
   end
 
   def payment
