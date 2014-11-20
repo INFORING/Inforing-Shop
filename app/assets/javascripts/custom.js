@@ -6,13 +6,9 @@
 	    $('div.alert').slideUp();
 	  }, 2000);
 
-    $('body').click(function (e) {
-    	var target = $(event.target);
-    	if(!target.is('.well')) {
-      	$('.well iframe').css("pointer-events", "none");
-    	} else {
-    		$('.well iframe').css("pointer-events", "auto");
-    	}
+    $('.well iframe').css("pointer-events", "none");
+		$(".well").hover(function() {
+		  $('.well iframe').css("pointer-events", "auto");
 		});
 
     function fix() {
