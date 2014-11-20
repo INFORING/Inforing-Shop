@@ -6,8 +6,13 @@
 	    $('div.alert').slideUp();
 	  }, 2000);
 
-	  $('.well').click(function () {
-	    $('.well iframe').css("pointer-events", "auto");
+    $('body').click(function (e) {
+    	var target = $(event.target);
+    	if(!target.is('.well')) {
+      	$('.well iframe').css("pointer-events", "none");
+    	} else {
+    		$('.well iframe').css("pointer-events", "auto");
+    	}
 		});
 
     function fix() {
