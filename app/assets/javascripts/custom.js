@@ -6,6 +6,10 @@
 	    $('div.alert').slideUp();
 	  }, 2000);
 
+	  $('.well').click(function () {
+	    $('.well iframe').css("pointer-events", "auto");
+		});
+
     function fix() {
 	    var heightPrice = [];
 	    $('.repair .item.active .pricing .content li.service_id').each(function(i) {
