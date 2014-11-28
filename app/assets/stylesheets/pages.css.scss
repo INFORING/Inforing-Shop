@@ -8,6 +8,8 @@
 	overflow: hidden;
 }
 
+
+
 /* Services */
 
 .services {
@@ -84,6 +86,12 @@
 	  	padding-top: 60px;
 	  }
 	}
+
+	@media (max-width: 767px) {
+    h3, p {
+			text-align: center;
+		}
+  }
 }
 
 /* About */
@@ -93,6 +101,12 @@
 	h2 {
 		margin-top: 0 !important;
 	}
+
+	@media (max-width: 767px) {
+    h2, p {
+			text-align: center;
+		}
+  }
 
 	.lead {
 	  font-weight: 300;

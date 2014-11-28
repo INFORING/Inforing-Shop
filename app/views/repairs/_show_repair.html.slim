@@ -5,7 +5,7 @@
 .repair
 	.container
 		.row
-			.col-xs-12 
+			.col-md-12.col-xs-12 
 				h2.right-line 
 					| #{@repair.title}
 					- if admin?  
@@ -65,7 +65,7 @@
 								
 						
 							- i.models.order('created_at ASC').each do |m|
-								div class = "col-md-8 col" style = "#{col_tag(i.models)}"
+								div class = "col-md-8 col-xs-8 col" style = "#{col_tag(i.models)}"
 										.pricing
 											.head
 												h3.price   
