@@ -26,6 +26,11 @@
 	    	$(this).height(heightPrice[fix] - (heightPrice[fix] / 2 - 5));
 				$(this).css('padding-top', (heightPrice[fix] / 2 - 5));
 				$(this).css('padding-bottom', (heightPrice[fix] / 2 + 15));
+				if (document.body.clientWidth < 767) {
+					$(this).css('padding-top', (heightPrice[fix] / 2));
+					$(this).css('padding-bottom', (heightPrice[fix] / 2 + 10));
+				}
+
 	  	});
   	}
   	fix();
