@@ -147,8 +147,8 @@ function fix() {
   });
 }) (jQuery);
 
-jQuery(window).resize(function(){
-	fix();			
+jQuery(window).bind("orientationchange",function(e){
+	fix();
 });
 
 ;(function($) {
