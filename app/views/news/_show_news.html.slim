@@ -6,7 +6,7 @@
 					.panel.panel-default
 						.panel-body
 							h3.title
-								= link_to news_path(n) do
+								= link_to news_path(n), target: "_top" do
 									= n.title
 								- if admin?
 									span
