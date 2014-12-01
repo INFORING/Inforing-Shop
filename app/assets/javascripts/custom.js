@@ -34,6 +34,9 @@
 	  	});
   	}
   	fix();
+  	window.addEventListener("resize", function() {
+			fix();
+		}, false);
 
   	$(".call").on("click", function() {
   		$("a").addClass("active");
