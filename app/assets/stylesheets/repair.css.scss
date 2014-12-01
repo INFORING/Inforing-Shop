@@ -194,18 +194,6 @@
 
 	  .head {
 		  border-bottom: solid 1px #ddd;
-
-		  h2 {
-			  font-size: 1.3em;
-			  text-align: center;
-			  background-color: #5ebe1e;
-			  color: #fff;
-			  margin: 0;
-			  padding: 10px 5px;
-			  font-weight: 400;
-			  height: 70px;
-			}
-
 		  .price {
 			  text-align: center;
 			  font-size: 24px;
@@ -233,6 +221,27 @@
 			  &:nth-child(2n+1) {
 				  background-color: #f9f9f9;
 				}
+			}
+		}
+
+		@media (max-width: 767px) {
+			.head {
+			  .price {
+				  font-size: 13px;
+				  height: 17px;
+
+				  a {
+					  font-size: 8px;
+					}
+				}
+			}
+		  .content {
+			  font-size: .5em;
+			}
+
+			.title {
+			  font-size: 13px;
+			  height: 56px;
 			}
 		}
 
@@ -276,6 +285,12 @@
 	    margin: 0;
 	    padding: 0;
 	  }
+	}
+
+	@media (max-width: 767px) {
+		.col {
+			padding: 0;
+		}
 	}
 
 	@media (max-width: 991px) {

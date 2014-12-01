@@ -1,7 +1,7 @@
 section.bread
 	.container
 		.row
-			h1.page-title 
+			h1.page-title
 				= yield(:bread)
 			ol.breadcrumb.pull-right.hidden-xs
 				= render_breadcrumbs :tag => :li, :separator => ""
