@@ -1,3 +1,22 @@
+function fix() {
+  var heightPrice = [];
+  $('.repair .item.active .pricing .content li.service_id').each(function(i) {
+  	heightPrice.push($(this).height());
+	});
+	$('.repair .item.active .pricing .content li.price_id').each(function(i) {
+		var fix = i % heightPrice.length; 
+
+  	$(this).height(heightPrice[fix] - (heightPrice[fix] / 2 - 5));
+		$(this).css('padding-top', (heightPrice[fix] / 2 - 5));
+		$(this).css('padding-bottom', (heightPrice[fix] / 2 + 15));
+		if (document.body.clientWidth < 767) {
+			$(this).css('padding-top', (heightPrice[fix] / 2));
+			$(this).css('padding-bottom', (heightPrice[fix] / 2 + 10));
+		}
+
+	});
+}
+
 (function($) {
   $(document).ready(function() {
     $.slidebars();
@@ -15,28 +34,7 @@
     	}
 		});
 
-    function fix() {
-	    var heightPrice = [];
-	    $('.repair .item.active .pricing .content li.service_id').each(function(i) {
-	    	heightPrice.push($(this).height());
-	  	});
-	  	$('.repair .item.active .pricing .content li.price_id').each(function(i) {
-	  		var fix = i % heightPrice.length; 
-
-	    	$(this).height(heightPrice[fix] - (heightPrice[fix] / 2 - 5));
-				$(this).css('padding-top', (heightPrice[fix] / 2 - 5));
-				$(this).css('padding-bottom', (heightPrice[fix] / 2 + 15));
-				if (document.body.clientWidth < 767) {
-					$(this).css('padding-top', (heightPrice[fix] / 2));
-					$(this).css('padding-bottom', (heightPrice[fix] / 2 + 10));
-				}
-
-	  	});
-  	}
   	fix();
-  	window.addEventListener("resize", function() {
-			fix();
-		}, false);
 
   	$(".call").on("click", function() {
   		$("a").addClass("active");
@@ -148,6 +146,10 @@
 	  });
   });
 }) (jQuery);
+
+jQuery(window).resize(function(){
+	fix();			
+});
 
 ;(function($) {
 
