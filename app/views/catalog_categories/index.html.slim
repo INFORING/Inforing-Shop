@@ -1,0 +1,8 @@
+- if admin?	
+	= link_to "Добавить категорию", new_catalog_category_path(method: :get),remote: true
+
+p
+#categoryIndex
+	= render 'catalog_categories/category_index'
+#newCategory
+#editCategory

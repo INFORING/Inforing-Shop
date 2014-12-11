@@ -1,0 +1,15 @@
+- @items.each do |i|
+	= link_to catalog_item_path(i) do
+		= image_tag i.attached_images.first.image.url(:thumb) unless i.attached_images.blank?
+	p
+	= i.title
+	p
+	= i.description
+	p
+	= i.price
+	- if admin?
+		p
+		= link_to "Редактировать", edit_catalog_item_path(i),remote: true
+		p
+		= link_to "Удалить", catalog_item_path(i), method: :delete, remote: true, data: { confirm: "Вы уверены удалить товар #{i.title}?" }
+	p

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :services
   resources :prices
   resources :news
+  resources :catalog_items
+  resources :catalog_categories
   resources :sessions, only: [:new, :create, :destroy]
 
   root 'pages#home'
@@ -25,4 +27,5 @@ Rails.application.routes.draw do
   match '/pay', to: 'pages#pay', via: 'get', as: :pay
   match '/order', to: 'pages#order', via: 'get'
   match '/order_parts', to: 'pages#order_parts', via: 'post', as: :order_parts
+  match '/catalog_items/images/destroy', to: 'catalog_items#destroy_image', via: 'delete', as: :item_destroy_image
 end

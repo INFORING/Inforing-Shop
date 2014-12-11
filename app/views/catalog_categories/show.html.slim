@@ -1,0 +1,11 @@
+h1 
+	= @category.title
+- if admin?
+	= link_to "Новый товар", new_catalog_item_path(category_id: @category.id), remote: true
+#categoryShow
+	= render 'catalog_categories/category_show'
+.text-center
+	= will_paginate @items
+#newItem
+#editItem
+

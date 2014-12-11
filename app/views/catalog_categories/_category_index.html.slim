@@ -1,0 +1,13 @@
+- @categories.each do |c|
+	= link_to catalog_category_path(c) do
+		= image_tag c.image.url(:thumb)
+	p
+	= c.title
+	p
+	= c.description
+	- if admin?
+		p
+		= link_to "Редактировать", edit_catalog_category_path(c),remote: true
+		p
+		= link_to "Удалить", catalog_category_path(c), method: :delete, remote: true, data: { confirm: "Вы уверены удалить раздел #{c.title}?" }
+	p

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118121102) do
+ActiveRecord::Schema.define(version: 20141211094814) do
 
   create_table "attached_images", force: true do |t|
     t.datetime "created_at"
@@ -20,6 +20,27 @@ ActiveRecord::Schema.define(version: 20141118121102) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "catalog_item_id"
+  end
+
+  create_table "catalog_categories", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "catalog_items", force: true do |t|
+    t.string   "title"
+    t.text     "description",         limit: 255
+    t.integer  "catalog_category_id"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
@@ -85,6 +106,12 @@ ActiveRecord::Schema.define(version: 20141118121102) do
     t.text "name"
     t.text "text"
   end
+
+# Could not dump table "sqlite_stat1" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+# Could not dump table "sqlite_stat4" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "sqlite_vs_links_names", id: false, force: true do |t|
     t.text "name"

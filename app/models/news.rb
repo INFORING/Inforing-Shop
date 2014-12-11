@@ -1,5 +1,5 @@
 class News < ActiveRecord::Base
-	validates :title,  presence: true
+  validates :title,  presence: true
   validates :description,  presence: true
 
   has_attached_file :image, :styles => { :large => "900x600!", :medium => "450x300!", :thumb => "150x100!" }, :default_url => "logo.png"
