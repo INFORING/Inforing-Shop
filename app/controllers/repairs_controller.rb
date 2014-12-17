@@ -4,6 +4,7 @@ class RepairsController < ApplicationController
   def new
   	@repair = Repair.new
     @repairs = Repair.all
+    @news = News.last(3)
     add_breadcrumb "Добавление ремонта", :new_repair_path
   end
 
