@@ -16,6 +16,8 @@ aside.footer
             = link_to "Новости", news_index_path, target: "_top"
           li
             = link_to 'Заказать запчасть', order_path, target: "_top"
+          li
+            = link_to 'Каталог', catalog_categories_path, target: "_top"
       .col-md-4.news
         h3.title Новости
         - @news.each do |n|

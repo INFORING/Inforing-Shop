@@ -16,6 +16,7 @@ gem 'rmagick'
 gem 'animate-rails'
 gem 'remotipart'
 gem 'mail'
+gem 'bxslider-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

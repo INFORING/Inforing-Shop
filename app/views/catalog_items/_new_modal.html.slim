@@ -1,13 +1,13 @@
 #newItemModal.modal.fade aria-hidden="true" aria-labelledby="newItemModalLabel" role="dialog" tabindex="-1" 
-	.modal-dialog.modal-sm
+	.modal-dialog.modal-lg
 		.modal-content
 			.modal-header
 				button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
-				h4#newItemModalLabel.modal-title Новый раздел
+				h4#newItemModalLabel.modal-title Новый товар
 			= form_for(@item, remote: true, multipart: true) do |f|
 				.modal-body
 					= f.text_field :title, class: "form-control"
-			        = f.text_area :description, class: "form-control"
+			        = f.text_area :description, rows: "10", class: "form-control"
 			        = f.text_field :price, class: "form-control"
 			        = file_field_tag 'images[]',multiple: true, class: "form-control"
 			        = f.hidden_field :catalog_category_id, value: @category_id

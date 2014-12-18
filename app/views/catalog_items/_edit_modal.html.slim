@@ -1,13 +1,13 @@
 #editItemModal.modal.fade aria-hidden="true" aria-labelledby="editItemModalLabel" role="dialog" tabindex="-1" 
-	.modal-dialog.modal-sm
+	.modal-dialog.modal-lg
 		.modal-content
 			.modal-header
 				button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
-				h4#editItemModalLabel.modal-title Редактировать раздел
+				h4#editItemModalLabel.modal-title Редактировать товар
 			= form_for(@item,method: :put, remote: true, multipart: true) do |f|
 				.modal-body
 					= f.text_field :title, class: "form-control"
-					= f.text_area :description, class: "form-control"
+					= f.text_area :description, rows: "10", class: "form-control"
 					= f.text_field :price, class: "form-control"
 					= collection_select(:catalog_item, :catalog_category_id, CatalogCategory.all, :id, :title, {},{class: "form-control"})
 					#itemImages

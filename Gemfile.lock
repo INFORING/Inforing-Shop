@@ -39,6 +39,7 @@ GEM
       will_paginate
     breadcrumbs_on_rails (2.3.0)
     builder (3.2.2)
+    bxslider-rails (4.1.0)
     capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
@@ -215,6 +216,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap-will_paginate
   breadcrumbs_on_rails
+  bxslider-rails
   capistrano (~> 2.15.0)
   capybara (= 2.1.0)
   coffee-rails (= 4.0.1)

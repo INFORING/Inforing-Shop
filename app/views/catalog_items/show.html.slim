@@ -1,5 +1,41 @@
-= @item.title
-- @item.attached_images.each do |i|
-	= image_tag i.image.url(:medium)
-= @item.description
-= @item.price
+- provide(:title, "")
+- provide(:description, "")
+- provide(:bread, @item.title)
+
+.container
+	h2.section-title.no-margin-top = @item.title
+	.row
+		.col-md-4
+			ul.bxslider
+				- @item.attached_images.each do |i|
+				  li
+				    = image_tag i.image.url(:medium)
+			#bx-pager
+				- @count = 0
+				- @item.attached_images.each do |i|
+				  a data-slide-index="#{@count}" href=""
+				    = image_tag i.image.url(:thumb)
+				  - @count += 1
+				- @count = 0
+		.col-md-5
+			h3.no-margin-top Описание
+			p
+				= simple_format(@item.description)
+			/h4 Характеристики
+			/ul.unstyled
+				li
+					strong Memory:
+					| 8GB standard, 16GB version available / RAM- 1GB LPDDR2
+				li
+					strong PROCESSOR:
+					| Qualcomm MSM8x26 quad-core A7 1.2GHz (Adreno 305 450MHz GPU)
+				li
+					strong Bands/Modes:
+					| CDMA: 850/1900 UMTS: 850/900/1700/1900/2100 GSM: 850/900/1800/1900
+				li
+					strong Operating system:
+					| Android 4.4, KitKat
+		.col-md-3
+			.e-price
+				= @item.price
+				i.fa.fa-rub

@@ -1,4 +1,6 @@
 class CatalogCategoriesController < ApplicationController
+	add_breadcrumb "Каталог", :catalog_categories_path, :only => %w(index show)
+
 	def new
 		@category = CatalogCategory.new
 		respond_to do |format|
@@ -52,6 +54,7 @@ class CatalogCategoriesController < ApplicationController
     @news = News.last(3)
 		@category = CatalogCategory.find(params[:id])
 		@items = @category.catalog_items.paginate(page: params[:page], per_page: 10)
+		add_breadcrumb @category.title, catalog_category_path(@category)
 	end
 
 	def category_params

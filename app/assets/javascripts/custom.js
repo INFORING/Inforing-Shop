@@ -25,6 +25,11 @@ function fix() {
 	    $('div.alert').slideUp();
 	  }, 2000);
 
+	  $('.bxslider').bxSlider({
+      pagerCustom: '#bx-pager',
+      controls: false
+		});
+
     $('body').click(function (e) {
     	var target = $(e.target);
     	if(!target.is('.well')) {

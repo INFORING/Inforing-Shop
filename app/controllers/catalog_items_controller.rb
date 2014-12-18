@@ -1,4 +1,6 @@
 class CatalogItemsController < ApplicationController
+	add_breadcrumb "Товары", :catalog_categories_path, :only => %w(show)
+
   def new
 		@item = CatalogItem.new
     @category_id = params[:category_id]
@@ -65,6 +67,7 @@ class CatalogItemsController < ApplicationController
     @item = CatalogItem.find(params[:id])
     @repairs = Repair.all
     @news = News.last(3)
+    add_breadcrumb @item.title, catalog_item_path(@item)
 	end
 
 	def item_params
