@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   match '/order', to: 'pages#order', via: 'get'
   match '/order_parts', to: 'pages#order_parts', via: 'post', as: :order_parts
   match '/catalog_items/images/destroy', to: 'catalog_items#destroy_image', via: 'delete', as: :item_destroy_image
+  match 'show_picture', to: 'pages#show_picture', via: 'get', as: :show_picture
 end

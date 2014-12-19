@@ -71,6 +71,13 @@ class PagesController < ApplicationController
     end
   end
 
+  def show_picture
+    @image_url = params[:image]
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def repair_computer
     redirect_to repair_path(3)
   end
