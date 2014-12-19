@@ -66,7 +66,7 @@ class CatalogItemsController < ApplicationController
 	def show
     @item = CatalogItem.find(params[:id])
     @repairs = Repair.all
-    @news = News.order('created_at ASC').first(3)
+    @news = News.order('created_at DESC').first(3)
     add_breadcrumb @item.title, catalog_item_path(@item)
 	end
 

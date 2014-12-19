@@ -20,14 +20,14 @@ class NewsController < ApplicationController
 
 	def show
 		@show_news = News.find(params[:id])
-		@news = News.order('created_at ASC').first(3)
+		@news = News.order('created_at DESC').first(3)
 		@repairs = Repair.all
 		add_breadcrumb @show_news.title, news_path(@show_news)
 	end
 
 	def index
 		@show_news = News.order('created_at DESC').paginate(page: params[:page], per_page: 3)
-		@news = News.order('created_at ASC').first(3)
+		@news = News.order('created_at DESC').first(3)
 		@repairs = Repair.all
 	end
 
