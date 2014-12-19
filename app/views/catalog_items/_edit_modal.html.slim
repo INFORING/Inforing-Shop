@@ -10,7 +10,7 @@
 					= f.text_area :description, rows: "10", class: "form-control"
 					= f.text_field :price, class: "form-control"
 		            = f.text_field :article, class: "form-control"
-					= collection_select(:catalog_item, :catalog_category_id, CatalogCategory.all, :id, :title, {},{class: "form-control"})
+					= collection_select(:catalog_item, :catalog_category_id, CatalogCategory.all, :id, :title, {:prompt => true, :selected => @item.catalog_category.id},{class: "form-control"})
 					#itemImages
 						= render "catalog_items/item_images"
 					= file_field_tag 'images[]',multiple: true, class: "form-control"
