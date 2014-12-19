@@ -4,27 +4,29 @@
 
 .container
 	h2.section-title.no-margin-top = @item.title
-	.row
-		.col-md-4
-			ul.bxslider
-				- @item.attached_images.each do |i|
-				  li
-				  	= link_to show_picture_path(image: i.image.url(:gigant)),method: :get, remote: true do
-				    	= image_tag i.image.url(:medium)
-			#bx-pager
-				- @count = 0
-				- @item.attached_images.each do |i|
-				  a data-slide-index="#{@count}" href=""
-				    = image_tag i.image.url(:thumb)
-				  - @count += 1
-				- @count = 0
-		.col-md-5
-			h3.no-margin-top Описание
-			p
-				= simple_format(@item.description)
-		.col-md-3
-			.e-price
-				= @item.price
-				i.fa.fa-rub
+	.category-item
+		.row
+			.col-md-4
+				ul.bxslider
+					- @item.attached_images.each do |i|
+					  li
+					  	= link_to show_picture_path(image: i.image.url(:gigant)),method: :get, remote: true do
+					    	= image_tag i.image.url(:medium)
+				#bx-pager
+					- @count = 0
+					- @item.attached_images.each do |i|
+					  a data-slide-index="#{@count}" href=""
+					    = image_tag i.image.url(:thumb)
+					  - @count += 1
+					- @count = 0
+			.col-md-5
+				h3.no-margin-top Описание
+				p
+					= simple_format(@item.description)
+			.col-md-3
+				.e-price
+					| Цена: 
+					= @item.price
+					i.fa.fa-rub
 
 #Picture

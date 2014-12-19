@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
   def home
   	@repairs = Repair.all
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
   end
 
   def contact
   	@repairs = Repair.all
   	add_breadcrumb "Контакты", :contact_path
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
   end
 
   def feedback
@@ -35,7 +35,7 @@ class PagesController < ApplicationController
   def payment
     @repairs = Repair.all
     add_breadcrumb "Предоплата", :payment_path
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
   end
 
   def pay
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
   def order
     @repairs = Repair.all
     add_breadcrumb "Заказ запчастей", :payment_path
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
   end
 
   def order_parts

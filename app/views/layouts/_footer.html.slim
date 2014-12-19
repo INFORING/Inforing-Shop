@@ -25,7 +25,7 @@ aside.footer
             = link_to image_tag(n.image.url(:thumb), alt: "n.description", class: "img-responsive media-object", width: 75, height: 75), news_path(n), class: "pull-left", target: "_top"
             .media-body
               h4.media-heading
-                = link_to n.title, news_path(n)
+                = link_to n.title, news_path(n), target: "_top"
               small 
                 = n.created_at.strftime("%d.%m.%Y")
       .col-md-4.contacts

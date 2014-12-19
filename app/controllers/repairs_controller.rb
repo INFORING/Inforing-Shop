@@ -4,12 +4,12 @@ class RepairsController < ApplicationController
   def new
   	@repair = Repair.new
     @repairs = Repair.all
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
     add_breadcrumb "Добавление ремонта", :new_repair_path
   end
 
   def index
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
     @repairs = Repair.all
   end
 
@@ -29,7 +29,7 @@ class RepairsController < ApplicationController
     @repair = Repair.find(params[:id])
     @repairs = Repair.all
     @items = @repair.items
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
     add_breadcrumb @repair.title, repair_path(@repair)
   end
 

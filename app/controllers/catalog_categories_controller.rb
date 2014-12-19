@@ -45,13 +45,13 @@ class CatalogCategoriesController < ApplicationController
 
 	def index
 		@repairs = Repair.all
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
 		@categories = CatalogCategory.all
 	end
 
 	def show
 		@repairs = Repair.all
-    @news = News.last(3)
+    @news = News.order('created_at ASC').last(3)
 		@category = CatalogCategory.find(params[:id])
 		@items = @category.catalog_items.paginate(page: params[:page], per_page: 10)
 		add_breadcrumb @category.title, catalog_category_path(@category)
