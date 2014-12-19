@@ -20,7 +20,10 @@
 					  - @count += 1
 					- @count = 0
 			.col-md-5
-				h3.no-margin-top Описание
+				h3 
+					| Артикул: 
+					= @item.article
+				h3 Описание
 				p
 					= simple_format(@item.description)
 			.col-md-3
