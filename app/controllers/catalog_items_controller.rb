@@ -12,6 +12,7 @@ class CatalogItemsController < ApplicationController
 	def create 
 	 @item = CatalogItem.new(item_params) 
 	 @items = CatalogCategory.find(item_params[:catalog_category_id]).catalog_items.paginate(page: params[:page], per_page: 10)
+   	 @category = CatalogCategory.find(item_params[:catalog_category_id])
    if @item.save
       unless params[:images].blank?  
         params[:images].first(5).each do |image|
@@ -34,6 +35,7 @@ class CatalogItemsController < ApplicationController
 	def update
 		@item = CatalogItem.find(params[:id])
 		@items = @item.catalog_category.catalog_items.paginate(page: params[:page], per_page: 10)
+    @category = @item.catalog_category
     @item.update_attributes(item_params)
     unless params[:images].blank?  
       params[:images].first(5).each do |image|
@@ -47,6 +49,7 @@ class CatalogItemsController < ApplicationController
 
 	def destroy
 		@item = CatalogItem.find(params[:id])
+		@category = @item.catalog_category
 		@items = @item.catalog_category.catalog_items.paginate(page: params[:page], per_page: 10)
 		@item.destroy
 		respond_to do |format|
@@ -71,6 +74,6 @@ class CatalogItemsController < ApplicationController
 	end
 
 	def item_params
-      params.require(:catalog_item).permit(:title, :description, :price, :catalog_category_id)
+      params.require(:catalog_item).permit(:title, :description, :price, :catalog_category_id, :article)
   end
 end

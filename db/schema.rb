@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211094814) do
+ActiveRecord::Schema.define(version: 20141219130516) do
 
   create_table "attached_images", force: true do |t|
     t.datetime "created_at"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141211094814) do
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "article"
   end
 
   create_table "items", force: true do |t|
@@ -63,10 +64,6 @@ ActiveRecord::Schema.define(version: 20141211094814) do
     t.string   "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   create_table "posts", force: true do |t|

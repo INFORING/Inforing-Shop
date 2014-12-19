@@ -9,6 +9,7 @@
 					= f.text_field :title, class: "form-control"
 					= f.text_area :description, rows: "10", class: "form-control"
 					= f.text_field :price, class: "form-control"
+		            = f.text_field :article, class: "form-control"
 					= collection_select(:catalog_item, :catalog_category_id, CatalogCategory.all, :id, :title, {},{class: "form-control"})
 					#itemImages
 						= render "catalog_items/item_images"
