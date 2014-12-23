@@ -9,8 +9,6 @@
 				= image_tag c.image.url(:medium), alt: "#{c.description}", class: "animated fadeIn animation-delay-3 img-responsive center-block"
 				h4 
 					= c.title
-				p
-					= truncate(c.description, length: 40)
 				- if admin?  
 					= link_to edit_catalog_category_path(c),remote: true do
 						i.fa.fa-pencil
