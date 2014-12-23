@@ -1,12 +1,13 @@
 function fix() {
   var heightPrice = [];
   $('.repair .item.active .pricing .content li.service_id').each(function(i) {
+  	heightPrice.clea
   	heightPrice.push($(this).height());
 	});
 	$('.repair .item.active .pricing .content li.price_id').each(function(i) {
 		var fix = i % heightPrice.length; 
 
-  	$(this).height(heightPrice[fix] - (heightPrice[fix] / 2 - 5));
+  	$(this).css('height', heightPrice[fix] - (heightPrice[fix] / 2 - 5));
 		$(this).css('padding-top', (heightPrice[fix] / 2 - 5));
 		$(this).css('padding-bottom', (heightPrice[fix] / 2 + 15));
 		if (document.body.clientWidth < 767) {
