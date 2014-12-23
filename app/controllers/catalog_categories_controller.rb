@@ -53,7 +53,7 @@ class CatalogCategoriesController < ApplicationController
 		@repairs = Repair.all
     @news = News.order('created_at DESC').first(3)
 		@category = CatalogCategory.find(params[:id])
-		@items = @category.catalog_items.paginate(page: params[:page], per_page: 10)
+		@items = @category.catalog_items.paginate(page: params[:page], per_page: 12)
 		add_breadcrumb @category.title, catalog_category_path(@category)
 	end
 
