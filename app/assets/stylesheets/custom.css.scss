@@ -85,22 +85,39 @@ header {
     float: right;
     position: relative;
 
-    h3 {
-      text-align: center;
-      font-weight: 400; 
+    .contact {
+      margin: 0;
+      padding: 0;
 
-      small {
-        color: #5ebe1e;
+      h3 {
+        text-align: center;
+        font-weight: 400; 
 
-        &.map {
-          display: none;
+        small {
+          color: #5ebe1e;
+
+          &.map {
+            display: none;
+          }
         }
       }
-    }
 
-    .address {
-      h4 {
-        text-align: center;
+      .address {
+        h4 {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+
+      .graphic {
+        border: 1px solid #5ebe1e;
+        border-radius: 4px;
+
+        h4 {
+          font-size: 14px;
+          line-height: 0.5;
+          text-align: center;
+        }
       }
     }
 
@@ -236,27 +253,17 @@ header {
       top: 45px;
 
       h3 {
-        position: relative;
-        top: -10px;
-        display: inline-block;
-        margin: 0 0 0 20px;
-
-        small {
-          &.map {
-            display: inline-block;
-            margin-left: 20px;
-          }
-        }
-
-        @media (max-width: 991px) {
-          margin: 10px 0 0 20px;
-        }
+        display: none;
       }
 
       .address {
         h4 {
           display: none;
         }
+      }
+
+      .graphic {
+        display: none;
       }
 
       .social {
