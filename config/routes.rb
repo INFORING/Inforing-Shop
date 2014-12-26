@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'shop_items/new'
+
+  get 'shop_subcategories/new'
+
+  get 'shop_categories/new'
+
+  get 'shop_trees/new'
+
 	resources :repairs
   resources :items
   resources :models

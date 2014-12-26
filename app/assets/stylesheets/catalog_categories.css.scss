@@ -116,4 +116,24 @@
 	  font-weight: 600;
 	  text-align: center;
 	}
+
+	.ec-filters-menu ul {
+	  padding: 0;
+	  list-style-type: none;
+	}
+	.ec-filters-menu ul li a {
+	  display: block;
+	  color: #333;
+	  border-left: solid 3px #ddd;
+	  padding-left: 15px;
+	  text-decoration: none;
+	}
+	.ec-filters-menu ul li a:hover {
+	  border-color: #000;
+	  color: #000;
+	}
+	.ec-filters-menu ul li a.active {
+	  border-color: #0099da;
+	  color: #0099da;
+	}
 }

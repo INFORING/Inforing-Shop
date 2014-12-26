@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219130516) do
+ActiveRecord::Schema.define(version: 20141226144204) do
 
   create_table "attached_images", force: true do |t|
     t.datetime "created_at"
@@ -99,6 +99,34 @@ ActiveRecord::Schema.define(version: 20141219130516) do
 
   create_table "services", force: true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_items", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "price"
+    t.integer  "article"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_subcategories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_trees", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

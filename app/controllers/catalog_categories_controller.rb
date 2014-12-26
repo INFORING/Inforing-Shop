@@ -46,6 +46,7 @@ class CatalogCategoriesController < ApplicationController
 	def index
 		@repairs = Repair.all
     @news = News.order('created_at DESC').first(3)
+    @items = CatalogItem.all.paginate(page: params[:page], per_page: 12)
 		@categories = CatalogCategory.all
 	end
 
