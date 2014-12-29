@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require jquery.remotipart
 //= require bxslider
+//= require snowstorm-min.js
 //= require_tree .
