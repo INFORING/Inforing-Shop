@@ -92,6 +92,7 @@ header {
       h3 {
         text-align: center;
         font-weight: 400; 
+        margin: 10px 0;
 
         small {
           color: #5ebe1e;
@@ -106,6 +107,7 @@ header {
         h4 {
           font-size: 16px;
           text-align: center;
+          margin: 5px;
         }
       }
 
@@ -1098,7 +1100,7 @@ header {
 /* Section Title */
 
 .section-title {
-    border-bottom: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
   padding-bottom: 15px;
   margin-top: 39px;
   color: #000;
