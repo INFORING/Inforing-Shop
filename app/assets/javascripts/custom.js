@@ -26,10 +26,6 @@ function fix() {
 	    $('div.alert').slideUp();
 	  }, 2000);
 
-	  snowStorm.snowColor = '#bbb';
-		snowStorm.flakesMaxActive = 100;    // show more snow on screen at once
-		snowStorm.useTwinkleEffect = true;
-
 	  $('.bxslider').bxSlider({
       pagerCustom: '#bx-pager',
       controls: false
