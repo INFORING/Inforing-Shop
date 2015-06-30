@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226144204) do
+ActiveRecord::Schema.define(version: 20150630181825) do
 
   create_table "attached_images", force: true do |t|
     t.datetime "created_at"
@@ -21,27 +21,6 @@ ActiveRecord::Schema.define(version: 20141226144204) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "catalog_item_id"
-  end
-
-  create_table "catalog_categories", force: true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  create_table "catalog_items", force: true do |t|
-    t.string   "title"
-    t.text     "description",         limit: 255
-    t.integer  "catalog_category_id"
-    t.integer  "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "article"
   end
 
   create_table "items", force: true do |t|
@@ -95,34 +74,6 @@ ActiveRecord::Schema.define(version: 20141226144204) do
 
   create_table "services", force: true do |t|
     t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "shop_categories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "shop_items", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "price"
-    t.integer  "article"
-    t.integer  "count"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "shop_subcategories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "shop_trees", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
