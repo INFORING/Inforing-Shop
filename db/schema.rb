@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701071557) do
+ActiveRecord::Schema.define(version: 20150701104644) do
 
   create_table "attached_images", force: :cascade do |t|
     t.datetime "created_at"
@@ -84,6 +84,11 @@ ActiveRecord::Schema.define(version: 20150701071557) do
     t.string   "login",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "full_name"
+    t.string   "phone"
+    t.string   "city"
+    t.string   "adress"
+    t.string   "postcode"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true
