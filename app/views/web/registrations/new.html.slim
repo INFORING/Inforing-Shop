@@ -1,0 +1,6 @@
+= simple_form_for @user, url: registrations_path, method: :post do |f|
+  = f.input :login
+  = f.input :mail
+  = f.password_field :password
+  = f.password_field :password_confirmation
+  = f.submit "Зарегестрироваться"

@@ -1,4 +1,5 @@
 class ModelsController < ApplicationController
+  skip_authentication
 
   def new
     @item = Item.find(params[:item_id])

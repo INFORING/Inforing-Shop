@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+  skip_authentication
+
   def new
     @item = Item.find(params[:item_id])
     respond_to do |format|               

@@ -7,11 +7,6 @@
 		- @repairs.order('title ASC').each do |r|
 			.col-md-3.item.text-center
 				= link_to repair_path(r), class: "center-block", target: "_top" do
-					= image_tag r.image.url(:medium), alt: "#{r.description}", class: "animated fadeIn animation-delay-3 img-responsive center-block"  
+			  		= image_tag r.image.url(:medium), alt: "#{r.description}", class: "animated fadeIn animation-delay-3 img-responsive center-block"
 					h4 
 						= r.title
-	.row
-		.col-md-12.text-center
-			- if admin?
-				= link_to new_repair_path, target: "_top" do
-					i.fa.fa-plus.fa-5x

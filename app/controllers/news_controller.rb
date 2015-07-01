@@ -1,4 +1,6 @@
 class NewsController < ApplicationController
+	skip_authentication
+
 	add_breadcrumb "Новости", :news_index_path, :only => %w(index show)
 
 	def new

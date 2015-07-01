@@ -17,4 +17,7 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
         = nav_dropdown_link 'Цены', repairs_path, @repairs
         = nav_link 'Предоплата', payment_path
         = nav_link 'Новости', news_index_path
-        = nav_link 'Каталог', catalog_categories_path
+        = nav_link 'Регистрация', new_registration_path unless signed_in?
+        = nav_link 'Вход', new_session_path unless signed_in?
+        = link_to "Выход(#{current_user})", session_path, method: :delete if signed_in?
+

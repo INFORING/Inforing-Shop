@@ -1,4 +1,6 @@
 class RepairsController < ApplicationController
+  skip_authentication
+
   add_breadcrumb "Прайс", :repairs_path, :only => %w(index show new)
 
   def new

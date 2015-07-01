@@ -17,6 +17,8 @@ module ApplicationHelper
 	end
 
   def nav_dropdown_link(link_text, link_path, extra)
+    return if extra.nil?
+
     class_name = current_page?(link_path) ? 'dropdown active' : 'dropdown'
 
     content_tag(:li, :class => class_name) do

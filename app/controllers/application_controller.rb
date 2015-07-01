@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
 	add_breadcrumb "Главная", :root_path
 
   protect_from_forgery with: :exception
-  include SessionsHelper
+
+  include UserAuthentication
 end

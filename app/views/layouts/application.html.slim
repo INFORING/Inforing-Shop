@@ -17,19 +17,17 @@ html
     = render 'layouts/yandex'
   body
     = render 'layouts/preloader'
-    - unless current_page?(sign_in_path)
-      #wrap
-        = render 'layouts/header'
-        = render 'layouts/navigation'
-        #flash
-           = render 'shared/flash_messages'
-        #bread  
-          = is_root?()
-        = yield
-        
-        = render 'layouts/footer'
-        = render 'layouts/upper'
-      = render 'layouts/slidebar'
-    - else
+    #wrap
+      = render 'layouts/header'
+      = render 'layouts/navigation'
+      #flash
+        = render 'shared/flash_messages'
+      #bread
+        = is_root?()
       = yield
+
+      = render 'layouts/footer'
+      = render 'layouts/upper'
+      = render 'layouts/slidebar'
+
 

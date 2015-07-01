@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_authentication
+
   def home
   	@repairs = Repair.all
     @news = News.order('created_at DESC').first(3)

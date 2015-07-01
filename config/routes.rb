@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   resources :prices
   resources :news
 
+  scope module: :web do
+    resource :session
+    resources :users
+    resources :registrations
+  end
+
 
   root 'pages#home'
 

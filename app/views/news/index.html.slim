@@ -3,12 +3,7 @@
 - provide(:bread, "Новостная лента")
 
 .posts
-	.row
-			.col-md-12.text-center
-				- if admin?
-					= link_to new_news_path, remote: true, class: "text-center" do
-						i.fa.fa-plus.fa-5x
-	#showNews	
+	#showNews
 		= render 'news/show_news'
 	.text-center
 		= will_paginate @show_news

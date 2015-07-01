@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  skip_authentication
+
   def new
     @item = Item.new
     @repair_id = params[:repair_id].to_i
