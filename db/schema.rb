@@ -79,9 +79,9 @@ ActiveRecord::Schema.define(version: 20150701104644) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "mail",            limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "login",           limit: 255
+    t.string   "mail"
+    t.string   "password_digest"
+    t.string   "login"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "full_name"

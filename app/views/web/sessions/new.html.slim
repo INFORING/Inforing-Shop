@@ -1,4 +1,12 @@
-= simple_form_for @session_form, url: session_path, method: :post do |f|
-  = f.input :mail
-  = f.password_field :password
-  = f.submit "Войти"
+.container.users
+  .row
+    .col-md-4.col-md-offset-4.login
+      = simple_form_for @session_form, url: session_path, method: :post do |f|
+        .form-group
+          = f.label "Логин или E-mail:"
+          = f.text_field :mail, class: "form-control"
+        .form-group
+          = f.label "Пароль:"
+          = f.password_field :password, class: "form-control"
+        = f.submit "Войти", class: "btn btn-ar btn-primary center-block"
+        .clearfix
