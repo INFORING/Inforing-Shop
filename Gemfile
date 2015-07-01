@@ -23,8 +23,13 @@ group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
   gem 'capistrano', '~> 2.15.0'
+
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'byebug'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'awesome_print'
 end
 
 group :test do

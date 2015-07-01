@@ -4,6 +4,13 @@ class Web::UsersController < Web::ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    if @user.save
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   def show
@@ -13,6 +20,7 @@ class Web::UsersController < Web::ApplicationController
   private
 
   def user_params
-    params.require(:user).permit
+    params.require(:user).permit( :login, :mail, :password, :password_confirmation, :full_name,
+                                  :postcode, :city, :phone, :adress)
   end
 end
