@@ -19,5 +19,6 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
         = nav_link 'Новости', news_index_path
         = nav_link 'Регистрация', new_registration_path unless signed_in?
         = nav_link 'Вход', new_session_path unless signed_in?
-        = link_to "Выход(#{current_user})", session_path, method: :delete if signed_in?
+        = nav_link current_user, user_path(current_user) if signed_in?
+        = link_to 'Выход', session_path, method: :delete if signed_in?
 
