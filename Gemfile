@@ -24,8 +24,8 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'capistrano', '~> 2.15.0'
 
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'byebug'
   gem 'pry-rails'
   gem 'pry-byebug'
