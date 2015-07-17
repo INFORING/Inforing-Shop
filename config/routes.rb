@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resource :session
     resources :users
     resources :registrations
+    resources :categories
+    resources :subcategories
+    resources :products
+    resources :features
   end
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701104644) do
+ActiveRecord::Schema.define(version: 20150717143519) do
 
   create_table "attached_images", force: :cascade do |t|
     t.datetime "created_at"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(version: 20150701104644) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "catalog_item_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.integer  "subcategory_id"
+    t.string   "title"
+    t.text     "value"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "items", force: :cascade do |t|
@@ -60,6 +74,16 @@ ActiveRecord::Schema.define(version: 20150701104644) do
     t.datetime "updated_at"
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.float    "price"
+    t.integer  "quantity"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "subcategory_id"
+  end
+
   create_table "repairs", force: :cascade do |t|
     t.string   "title",              limit: 255
     t.text     "description"
@@ -78,10 +102,17 @@ ActiveRecord::Schema.define(version: 20150701104644) do
     t.datetime "updated_at"
   end
 
+  create_table "subcategories", force: :cascade do |t|
+    t.integer  "category_id"
+    t.string   "title"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "mail"
-    t.string   "password_digest"
-    t.string   "login"
+    t.string   "mail",            limit: 255
+    t.string   "password_digest", limit: 255
+    t.string   "login",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "full_name"
