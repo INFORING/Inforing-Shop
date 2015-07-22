@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class Web::Service::ItemsController < Web::Service::ApplicationController
   skip_authentication
 
   def new

@@ -12,24 +12,24 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-    = render 'layouts/shim'
-    = render 'layouts/google'
-    = render 'layouts/yandex'
+    = render 'layouts/web/shim'
+    = render 'layouts/web/google'
+    = render 'layouts/web/yandex'
   body
-    = render 'layouts/preloader'
+    = render 'layouts/web/preloader'
     #wrap
-      = render 'layouts/header'
-      = render 'layouts/navigation'
+      = render 'layouts/web/shop/header'
+      = render 'layouts/web/shop/navigation'
       #flash
         = render 'shared/flash_messages'
       #bread
         = is_root?()
       = yield
 
-      = render 'layouts/footer'
-      = render 'layouts/upper'
-      = render 'layouts/slidebar'
-      = render 'layouts/registration_modal'
-      = render 'layouts/login_modal'
+      = render 'layouts/web/shop/footer'
+      = render 'layouts/web/shop/upper'
+      = render 'layouts/web/shop/slidebar'
+      = render 'web/registrations/registration_modal'
+      = render 'web/sessions/login_modal'
 
 

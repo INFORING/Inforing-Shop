@@ -1,4 +1,4 @@
-class Web::SearchesController < Web::ApplicationController
+class Web::Shop::SearchesController < Web::Shop::ApplicationController
   skip_authentication
 
   def show

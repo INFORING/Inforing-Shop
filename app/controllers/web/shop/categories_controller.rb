@@ -1,4 +1,4 @@
-class Web::CategoriesController < Web::ApplicationController
+class Web::Shop::CategoriesController < Web::Shop::ApplicationController
   skip_authentication
 
   def index

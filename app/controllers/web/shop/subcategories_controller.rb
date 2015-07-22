@@ -1,4 +1,4 @@
-class Web::SubcategoriesController < Web::ApplicationController
+class Web::Shop::SubcategoriesController < Web::Shop::ApplicationController
   skip_authentication
 
   def show
