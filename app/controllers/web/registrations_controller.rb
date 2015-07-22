@@ -1,16 +1,13 @@
 class Web::RegistrationsController < Web::ApplicationController
   skip_authentication
 
-  def new
-    @user = User.new
-  end
-
   def create
     @user = User.new(registration_params)
+
     if @user.save
-      redirect_to root_path
+      render json: @user
     else
-      render 'new'
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 

@@ -1,7 +1,4 @@
-h1 = @user
-= link_to "Редактировать", edit_user_path(@user)
-ul
-  li
-    = @user.login
-  li
-    = @user.mail
+- provide(:bread, @user.login)
+
+.container.users
+  = react_component 'User', { data: @user }

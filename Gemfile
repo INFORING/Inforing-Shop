@@ -18,6 +18,7 @@ gem 'remotipart'
 gem 'mail'
 gem 'bxslider-rails'
 gem 'simple_form'
+gem 'react-rails', '~> 1.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

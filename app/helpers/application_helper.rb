@@ -8,11 +8,12 @@ module ApplicationHelper
     end
   end
   
-	def nav_link(link_text, link_path)
+	def nav_link(link_text, link_path, options = {})
 	  class_name = current_page?(link_path) ? 'active' : ''
+    options[:target] = '_top'
 
 	  content_tag(:li, :class => class_name) do
-	    link_to link_text, link_path, target: "_top"
+	    link_to link_text, link_path, options
 	  end
 	end
 
@@ -25,6 +26,12 @@ module ApplicationHelper
       link_to(link_text, link_path, class: "dropdown-toggle", "data-toggle"=>"dropdown") + content_tag(:ul, :class => "dropdown-menu dropdown-menu-left") do
         extra.order('title ASC').collect {|e| concat(content_tag(:li, link_to(e.title, repair_path(e.id))))}
       end
+    end
+  end
+
+  def nav_modal_link(link_text, modalName)
+    content_tag(:li) do
+      link_to link_text, '', 'data-toggle' => 'modal', 'data-target' => '#' + modalName + 'Modal'
     end
   end
 
