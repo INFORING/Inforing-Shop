@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :subcategories
     resources :products
     resources :features
+    resource :search
   end
 
 

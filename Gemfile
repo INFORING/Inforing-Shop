@@ -18,9 +18,12 @@ gem 'remotipart'
 gem 'mail'
 gem 'bxslider-rails'
 gem 'simple_form'
+gem 'mysql2', '~> 0.3.13', :platform => :ruby
+gem 'thinking-sphinx'
+gem 'pg'
+
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
   gem 'capistrano', '~> 2.15.0'
 
@@ -49,7 +52,6 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
   gem 'unicorn'
 end
