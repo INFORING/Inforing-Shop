@@ -1,20 +1,18 @@
 class Web::UsersController < Web::ApplicationController
-  def edit
-    @user = User.find(params[:id])
-  end
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    if @user.save
-      redirect_to @user
+    if @user.update(user_params)
+      render json: @user
     else
-      render 'edit'
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
   def show
     @user = User.find(params[:id])
+
+    add_breadcrumb 'Профиль', @user
   end
 
   private

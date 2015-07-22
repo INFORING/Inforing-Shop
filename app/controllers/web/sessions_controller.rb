@@ -1,18 +1,14 @@
 class Web::SessionsController < Web::ApplicationController
   skip_authentication only: [:new, :create]
 
-  def new
-    @session_form = SessionForm.new
-  end
-
   def create
-    @session_form = SessionForm.new session_form_params
+    @session_form = SessionForm.new(session_form_params)
 
     if @session_form.valid?
       sign_in @session_form.user
-      redirect_to root_path
+      render json: @session_form
     else
-      render :new
+      render json: @session_form.errors, status: :unprocessable_entity
     end
   end
 

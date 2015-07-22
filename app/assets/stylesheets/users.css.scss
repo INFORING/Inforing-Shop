@@ -1,4 +1,7 @@
 .users {
-  .register {
+  .user-info {
+    &.row {
+      min-height: 350px;
+    }
   }
 }
