@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class Web::Service::PagesController < Web::Service::ApplicationController
   skip_authentication
 
   def home

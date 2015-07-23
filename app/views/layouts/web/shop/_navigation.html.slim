@@ -13,14 +13,7 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-
         = nav_link 'Главная', root_path
-        = nav_link 'Контакты', contact_path
-        = nav_dropdown_link 'Цены', repairs_path, @repairs
-        = nav_link 'Предоплата', payment_path
-        = nav_link 'Новости', news_index_path
-        = nav_modal_link 'Регистрация', 'registration' unless signed_in?
-        = nav_modal_link 'Вход', 'login' unless signed_in?
-        = nav_link 'Профиль', user_path(current_user) if signed_in?
-        = nav_link 'Выход', session_path, method: :delete if signed_in?
+
 = form_tag search_path, method: :get do
   = text_field_tag :query
   = submit_tag

@@ -1,4 +1,4 @@
-class ModelsController < ApplicationController
+class Web::Service::ModelsController < Web::Service::ApplicationController
   skip_authentication
 
   def new
