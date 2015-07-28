@@ -1,10 +1,11 @@
-class Web::RegistrationsController < Web::ApplicationController
+class Web::Shop::RegistrationsController < Web::Shop::ApplicationController
   skip_authentication
 
   def create
     @user = User.new(registration_params)
 
     if @user.save
+      sign_in @user
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity

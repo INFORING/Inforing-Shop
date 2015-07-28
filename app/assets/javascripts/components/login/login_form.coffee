@@ -13,7 +13,7 @@
       @props.handleNewLogin data
       @setState @getInitialState()
       $('#loginModal').modal('hide')
-      location.reload();
+      location.reload()
     , 'JSON'
 
   render: ->

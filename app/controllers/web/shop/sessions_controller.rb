@@ -1,4 +1,4 @@
-class Web::SessionsController < Web::ApplicationController
+class Web::Shop::SessionsController < Web::Shop::ApplicationController
   skip_authentication only: [:new, :create]
 
   def create
@@ -14,7 +14,7 @@ class Web::SessionsController < Web::ApplicationController
 
   def destroy
     sign_out
-    redirect_to root_path
+    redirect_to categories_path
   end
 
   private

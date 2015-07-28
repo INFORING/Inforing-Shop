@@ -10,11 +10,14 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
     .pull-right
       = link_to 'javascript:void(0);', class: 'icon-navbar slidebar-toggle-right' do
         i.fa.fa-bars
+    .search.col-md-3.pull-right
+      = form_tag search_path, method: :get do
+        .input-group
+          .input-group-btn
+            = submit_tag 'Поиск', class: 'btn btn-ar btn-primary'
+          = text_field_tag :query, nil, class: 'form-control'
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-
+      ul.nav.navbar-nav
         = nav_link 'Главная', root_path
 
-= form_tag search_path, method: :get do
-  = text_field_tag :query
-  = submit_tag
 

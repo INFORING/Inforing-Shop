@@ -190,7 +190,7 @@ header {
     .dropdown {
       display: inline-block;
       margin-left: 20px;
-      z-index: 60000000;
+      z-index: 6000000;
       vertical-align: top;
 
       a {
@@ -467,7 +467,13 @@ header {
         top: 0;
       }
     }
+  }
+
+  .search {
+    form {
+      padding-top: 7px;
     }
+  }
 }
 
 @media (max-width: 767px) {
@@ -1000,6 +1006,14 @@ header {
 }
 
 /* Modal */
+
+.modal {
+  z-index: 6000200;
+}
+
+.modal-backdrop {
+  z-index: 6000100;
+}
 
 .modal-dialog {
   margin-top: 80px;

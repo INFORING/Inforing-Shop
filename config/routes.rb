@@ -2,10 +2,6 @@ Rails.application.routes.draw do
 
   scope module: :web do
 
-    resource :session
-    resources :users
-    resources :registrations
-
     scope module: :service do
       resources :repairs
       resources :items
@@ -17,6 +13,9 @@ Rails.application.routes.draw do
 
 
     scope module: :shop do
+      resource :session
+      resources :users
+      resources :registrations
       resources :categories
       resources :subcategories
       resources :products

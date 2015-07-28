@@ -15,6 +15,7 @@
       @props.handleNewRegistration data
       @setState @getInitialState()
       $('#registrationModal').modal('hide')
+      location.reload()
     , 'JSON'
 
   render: ->
