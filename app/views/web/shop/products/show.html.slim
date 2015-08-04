@@ -5,3 +5,5 @@ p
       = @product.description
     li
       = @product.price
+    li
+      = link_to 'Добавить в корзину', cart_items_path(id: @product.id), method: :post

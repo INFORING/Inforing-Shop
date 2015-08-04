@@ -22,6 +22,8 @@ gem 'react-rails', '~> 1.0'
 gem 'mysql2', '~> 0.3.13', :platform => :ruby
 gem 'thinking-sphinx'
 gem 'pg'
+gem "redis", "~> 3.0.1"
+gem "hiredis", "~> 0.4.5"
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

@@ -44,6 +44,10 @@ Rails.application.routes.draw do
       resources :features
       resource :search, only: [:show]
       resources :products, only: [:index, :show]
+      resource :cart, only: [:destroy]
+      namespace :cart do
+        resources :items, only: [:create, :update, :destroy]
+      end
 
       get '/products/index_by_category/:id', to: 'products#index_by_category'
       get '/products/index_by_subcategory/:id', to: 'products#index_by_subcategory'

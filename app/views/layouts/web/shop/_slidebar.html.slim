@@ -1,14 +1,15 @@
 .slidebar.slidebar-right
-  h2.slidebar-header Навигация
+  h2.slidebar-header Корзина
   ul.slidebar-menu
+    - unless current_cart.nil?
+      - current_cart.items.each do |item|
+        li
+          = item.title
+          = link_to '-', cart_item_path(item, count: -1), method: :put
+          = item.count
+          = link_to '+', cart_item_path(item, count: 1), method: :put
+          = item.total_price
+          = link_to cart_item_path(item), method: :delete do
+            i.fa.fa-remove
+      = link_to "очистить корзину", cart_path, method: :delete
 
-  h2.slidebar-header Социальные сети
-  .slidebar-social-icons
-    a.social-icon-ar.vk href="http://vk.com/inforing73" target="_blank" 
-      i.fa.fa-vk
-    a.social-icon-ar.twitter href="https://twitter.com/inforing73" target="_blank" 
-      i.fa.fa-twitter
-    a.social-icon-ar.facebook href="http://vk.com/inforing73" target="_blank" 
-      i.fa.fa-facebook
-    a.social-icon-ar.googleplus href="https://plus.google.com/+ИнфорингУльяновск/posts" target="_blank"
-      i.fa.fa-google-plus
