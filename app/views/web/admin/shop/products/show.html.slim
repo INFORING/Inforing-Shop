@@ -1,0 +1,32 @@
+h1 = @product.title
+= @product.description
+= @product.price
+
+= simple_form_for @product, url: admin_shop_product_path, method: :put do |f|
+  = f.text_field :title
+  = f.text_area :description
+  = f.text_field :price
+  = f.collection_select(:subcategory_id, Subcategory.all, :id, :title)
+  = f.submit
+
+h2 Features
+
+= simple_form_for @new_feature, url: admin_shop_product_feature_path(@product), method: :post do |f|
+  = f.text_field :title
+  = f.text_field :value
+  = f.submit
+
+ul
+  - @features.each do |feature, value|
+    li
+      = feature
+      | =
+      = value
+      = link_to admin_shop_product_feature_path(@product, feature: feature), method: :delete do
+        i.fa.fa-remove
+      = simple_form_for @new_feature, url: admin_shop_product_feature_path(@product), method: :post do |f|
+        = f.text_field :title, value: feature, readonly: true
+        = f.text_field :value, value: value
+        = f.submit
+
+

@@ -2,9 +2,28 @@ Rails.application.routes.draw do
 
   scope module: :web do
 
-    resource :session
-    resources :users
-    resources :registrations
+    root 'service/pages#home'
+
+    namespace :admin do
+      root 'pages#index'
+      resource :session
+
+      namespace :shop do
+        root 'categories#index'
+        resources :users
+        resources :categories
+        resources :subcategories do
+          scope module: :subcategories do
+            resource :feature
+          end
+        end
+        resources :products do
+          scope module: :products do
+            resource :feature
+          end
+        end
+      end
+    end
 
     scope module: :service do
       resources :repairs
@@ -17,16 +36,16 @@ Rails.application.routes.draw do
 
 
     scope module: :shop do
-      resources :categories
-      resources :subcategories
-      resources :products
+      resource :session
+      resources :users
+      resources :registrations
+      resources :categories, only: [:index, :show]
+      resources :subcategories, only: [:index, :show]
+      resources :products, only: [:index, :show]
       resources :features
-      resource :search
+      resource :search, only: [:show]
     end
   end
-
-
-  root 'web/service/pages#home'
 
   match '/contact', to: 'web/service/pages#contact', via: 'get'
   match '/feedback', to: 'web/service/pages#feedback', via: 'get', as: :feedback

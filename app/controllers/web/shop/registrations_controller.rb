@@ -1,4 +1,4 @@
-class Web::RegistrationsController < Web::ApplicationController
+class Web::Shop::RegistrationsController < Web::Shop::ApplicationController
   skip_authentication
 
   def create

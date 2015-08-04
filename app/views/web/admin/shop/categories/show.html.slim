@@ -1,0 +1,17 @@
+h1
+  = @category.title
+
+= simple_form_for @category, url: admin_shop_category_path, method: :put do |f|
+  = f.text_field :title
+  = f.submit
+
+
+= simple_form_for @new_subcategory, url: admin_shop_subcategories_path(id: @category.id) do |f|
+  = f.text_field :title
+  = f.submit
+
+
+ul
+  - @subcategories.each do |subcategory|
+    li
+      = link_to subcategory.title, admin_shop_subcategory_path(subcategory)

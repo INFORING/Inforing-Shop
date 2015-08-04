@@ -1,9 +1,9 @@
-class SessionForm
+class AdminSessionForm
   include ActiveModel::Model
 
-  attr_accessor :mail, :password
+  attr_accessor :login, :password
 
-  validates :mail, presence: true
+  validates :login, presence: true
   validates :password, presence: true
 
   validate do
@@ -11,6 +11,6 @@ class SessionForm
   end
 
   def user
-    @user ||= User.find_by mail: mail
+    @user ||= Admin.find_by login: login
   end
 end

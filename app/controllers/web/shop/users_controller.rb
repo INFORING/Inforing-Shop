@@ -1,4 +1,4 @@
-class Web::UsersController < Web::ApplicationController
+class Web::Shop::UsersController < Web::Shop::ApplicationController
 
   def update
     @user = User.find(params[:id])
