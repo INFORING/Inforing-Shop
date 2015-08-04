@@ -14,7 +14,6 @@ class Web::Admin::Shop::SubcategoriesController < Web::Admin::Shop::ApplicationC
     redirect_to admin_shop_category_path(@category)
   end
 
-
   def update
     @subcategory = Subcategory.find(params[:id])
     @subcategory.update_attributes(subcategory_params)

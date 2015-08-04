@@ -41,9 +41,12 @@ Rails.application.routes.draw do
       resources :registrations
       resources :categories, only: [:index, :show]
       resources :subcategories, only: [:index, :show]
-      resources :products, only: [:index, :show]
       resources :features
       resource :search, only: [:show]
+      resources :products, only: [:index, :show]
+
+      get '/products/index_by_category/:id', to: 'products#index_by_category'
+      get '/products/index_by_subcategory/:id', to: 'products#index_by_subcategory'
     end
   end
 
