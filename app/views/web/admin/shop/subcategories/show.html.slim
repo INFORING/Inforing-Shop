@@ -1,0 +1,37 @@
+h1
+  = @subcategory.title
+
+= simple_form_for @subcategory, url: admin_shop_subcategory_path, method: :put do |f|
+    = f.text_field :title
+    = f.collection_select(:category_id, Category.all, :id, :title)
+    = f.submit
+
+h2 Features
+
+= simple_form_for @new_feature, url: admin_shop_subcategory_feature_path(@subcategory), method: :post do |f|
+  = f.text_field :title
+  = f.submit
+
+ul
+  - @features.each do |feature|
+    li
+      = feature
+      = link_to admin_shop_subcategory_feature_path(@subcategory, feature: feature), method: :delete do
+        i.fa.fa-remove
+
+
+
+
+h2 Products
+
+= simple_form_for @new_product, url: admin_shop_products_path(id: @subcategory.id), method: :post do |f|
+  = f.text_field :title
+  = f.text_area :description
+  = f.text_field :price
+  = f.submit
+
+ul
+  - @products.each do |product|
+    li
+      = link_to product.title, admin_shop_product_path(product)
+

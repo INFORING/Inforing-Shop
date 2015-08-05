@@ -1,5 +1,4 @@
 class Web::Service::RepairsController < Web::Service::ApplicationController
-  skip_authentication
 
   add_breadcrumb "Прайс", :repairs_path, :only => %w(index show new)
 

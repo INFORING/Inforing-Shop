@@ -1,5 +1,4 @@
 class Web::Service::PagesController < Web::Service::ApplicationController
-  skip_authentication
 
   def home
   	@repairs = Repair.all

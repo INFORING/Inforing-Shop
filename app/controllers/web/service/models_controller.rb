@@ -1,5 +1,4 @@
 class Web::Service::ModelsController < Web::Service::ApplicationController
-  skip_authentication
 
   def new
     @item = Item.find(params[:item_id])

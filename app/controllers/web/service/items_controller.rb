@@ -1,5 +1,4 @@
 class Web::Service::ItemsController < Web::Service::ApplicationController
-  skip_authentication
 
   def new
     @item = Item.new

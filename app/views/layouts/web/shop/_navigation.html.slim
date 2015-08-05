@@ -19,5 +19,9 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
         = nav_link 'Главная', root_path
+        = nav_modal_link 'Регистрация', 'registration' unless signed_in?
+        = nav_modal_link 'Вход', 'login' unless signed_in?
+        = nav_link 'Профиль', user_path(current_user) if signed_in?
+        = nav_link 'Выход', session_path, method: :delete if signed_in?
 
 

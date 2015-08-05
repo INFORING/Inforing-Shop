@@ -1,0 +1,4 @@
+= simple_form_for @session_form, url: admin_session_path, method: :post do |f|
+  = f.text_field :login
+  = f.password_field :password
+  = f.submit

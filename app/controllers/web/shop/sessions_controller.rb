@@ -2,7 +2,7 @@ class Web::Shop::SessionsController < Web::Shop::ApplicationController
   skip_authentication only: [:new, :create]
 
   def create
-    @session_form = SessionForm.new(session_form_params)
+    @session_form = UserSessionForm.new(session_form_params)
 
     if @session_form.valid?
       sign_in @session_form.user

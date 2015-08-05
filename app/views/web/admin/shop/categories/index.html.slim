@@ -1,0 +1,8 @@
+= simple_form_for @new_category, url: admin_shop_categories_path, method: :post do |f|
+  = f.text_field :title
+  = f.submit
+
+ul
+  - @categories.each do |category|
+    li
+     = link_to category.title, admin_shop_category_path(category)
