@@ -17,11 +17,6 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
             = submit_tag 'Поиск', class: 'btn btn-ar btn-primary'
           = text_field_tag :query, nil, class: 'form-control'
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav
-        = nav_link 'Главная', root_path
-        = nav_modal_link 'Регистрация', 'registration' unless signed_in?
-        = nav_modal_link 'Вход', 'login' unless signed_in?
-        = nav_link 'Профиль', user_path(current_user) if signed_in?
-        = nav_link 'Выход', session_path, method: :delete if signed_in?
+      = react_component 'CatalogNavbar', { data: @categories }
 
 

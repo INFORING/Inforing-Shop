@@ -1,5 +1,5 @@
 @UserLinks = React.createClass
-  displayName: 'LoginLink'
+  displayName: 'UserLinks'
   getInitialState: ->
     user: @props.user
   getDefaultProps: ->

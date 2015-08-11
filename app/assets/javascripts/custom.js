@@ -26,10 +26,9 @@ function fix() {
 	    $('div.alert').slideUp();
 	  }, 2000);
 
-	  $('.bxslider').bxSlider({
-      pagerCustom: '#bx-pager',
-      controls: false
-		});
+      $('.bxslider').bxSlider({
+          pagerCustom: '#bx-pager'
+      });
 
     $('body').click(function (e) {
     	var target = $(e.target);

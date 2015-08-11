@@ -1,6 +1,11 @@
 class Web::Shop::ProductsController < Web::Shop::ApplicationController
   skip_authentication
 
+  def index
+    @products = Product.all
+    render json: @products
+  end
+
   def show
     @product = Product.find(params[:id])
   end

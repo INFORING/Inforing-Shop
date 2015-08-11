@@ -19,6 +19,7 @@ gem 'mail'
 gem 'bxslider-rails'
 gem 'simple_form'
 gem 'react-rails', '~> 1.0'
+gem 'react-router-rails', '~>0.13.3.1'
 gem 'mysql2', '~> 0.3.13', :platform => :ruby
 gem 'thinking-sphinx'
 gem 'pg'
