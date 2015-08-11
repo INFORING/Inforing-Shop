@@ -11,6 +11,7 @@ class Web::Shop::UsersController < Web::Shop::ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @categories = Category.all
 
     add_breadcrumb 'Профиль', @user
   end
