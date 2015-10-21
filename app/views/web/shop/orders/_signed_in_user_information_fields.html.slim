@@ -1,0 +1,11 @@
+= f.hidden_field :mail, value: current_user.mail
+= f.label :full_name, 'ФИО'
+= f.text_field :full_name, value: current_user.full_name
+= f.label :phone, 'Телефон'
+= f.phone_field :phone, value: current_user.phone
+= f.label :city, 'Город'
+= f.text_field :city, value: current_user.city
+= f.label :address, 'Адрес'
+= f.text_field :address, value: current_user.adress
+= f.label :postcode, 'Почтовый индекс'
+= f.text_field :postcode, value: current_user.postcode

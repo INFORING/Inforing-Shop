@@ -9,6 +9,17 @@ class Web::Shop::UsersController < Web::Shop::ApplicationController
     end
   end
 
+  def order_edit
+    order = Order.find(params[:id])
+    @user = order.user_update_attributes!
+  end
+
+  def order_update
+    user = current_user
+    user.update_attributes(user_params)
+    redirect_to user
+  end
+
   def show
     @user = User.find(params[:id])
     @categories = Category.all

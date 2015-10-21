@@ -2,3 +2,14 @@
 
 .container.users
   = react_component 'User', { data: @user }
+
+- if @user.orders.present?
+  h2 Заказы
+  table.table
+    - @user.orders.each do |order|
+      tr
+        td=order.created_at
+        td=order.cart.full_price
+        td=order.status_title
+        - if order.status == 0
+          td=link_to 'Отменить', order_path(order), method: :patch

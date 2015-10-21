@@ -1,0 +1,14 @@
+.col-md-12
+  = @order.mail
+  p
+  = @order.phone
+  p
+  |....
+  p
+table.table
+  - @cart.products.each do |product|
+    tr
+      td= product.title
+      td= product.price
+      td= product.count
+  = @cart.full_price

@@ -1,0 +1,14 @@
+= form_for @user, url: order_registrations_path, method: :post do |f|
+  h3 Основная информация
+  = f.text_field :mail
+  = f.text_field :login
+  = f.password_field :password
+  = f.password_field :password_confirmation
+  h3 Дополнительная информация
+  = f.text_field :full_name
+  = f.text_field :phone
+  = f.text_field :adress
+  = f.text_field :postcode
+  = f.text_field :city
+  = f.submit
+= link_to 'Нибуду', categories_path

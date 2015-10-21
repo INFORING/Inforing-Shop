@@ -1,0 +1,13 @@
+= form_for @order do |f|
+  - if signed_in?
+      = render partial: 'signed_in_user_information_fields', locals: { f: f }
+  - else
+    = f.label :mail, 'E-mail'
+    = f.text_field :mail
+    = render partial:'user_information_fields', locals: { f: f }
+  - current_cart.items.each do |item|
+    = item.title
+    = item.price
+  = f.label :delivery, 'Доставка'
+  = f.select :delivery, options_for_select(["Самовывоз", "Почта", 'Транспортная компания'])
+  = f.submit 'Подтвердить', class: 'btn.btn-primary'

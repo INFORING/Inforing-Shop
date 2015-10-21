@@ -61,4 +61,8 @@ module ApplicationHelper
   def bootstrap_class_for flash_type
     "alert-#{flash_type.to_s}"
   end
+
+  def order_status_select
+    options_for_select(['Ожидает оплаты' => 0, 'Оплачен' => 1, 'Отменен' => 5, 'Возврат' => 6, 'Доставка' => 2, 'Доставлен' => 3])
+  end
 end

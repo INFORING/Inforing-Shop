@@ -1,1 +1,1 @@
-$redis = Redis.new(password: 'test', :driver => :hiredis)
+$redis = Redis.new(:driver => :hiredis)

@@ -6,7 +6,16 @@ class User < ActiveRecord::Base
   validates :login, presence: true, uniqueness: { case_sensitive: false }
   # validates :password, presence: true, length: { minimum: 6 }
 
+  def information_present?
+    inf = [full_name,phone,city,adress,postcode]
+    !inf.any? { |i| i.blank? || i.nil? }
+  end
+
   def to_s
     login
+  end
+
+  def orders
+    Order.where('mail = ? AND status !=5', mail)
   end
 end

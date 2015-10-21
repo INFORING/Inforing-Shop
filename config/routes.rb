@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       namespace :shop do
         root 'categories#index'
         resources :users
+        resources :orders
         resources :categories
         resources :subcategories do
           scope module: :subcategories do
@@ -37,14 +38,25 @@ Rails.application.routes.draw do
 
     scope module: :shop do
       resource :session
-      resources :users
-      resources :registrations
+      resources :users do
+        collection do
+          get 'order_edit', as: :order_edit
+          patch 'order_update', as: :order_update
+        end
+      end
+      resources :registrations do
+        collection do
+          get 'new_from_order', as: :new_order
+          post 'create_from_order', as: :order
+        end
+      end
       resources :categories, only: [:index, :show]
       resources :subcategories, only: [:index, :show]
       resources :features
       resource :search, only: [:show]
       resources :products, only: [:index, :show]
       resource :cart, only: [:destroy]
+      resources :orders, only: [:create, :update, :new]
       namespace :cart do
         resources :items, only: [:create, :update, :destroy]
       end
@@ -66,7 +78,7 @@ Rails.application.routes.draw do
   match '/repair_tablet', to: 'web/service/pages#repair_tablet', via: 'get'
   match '/payment', to: 'web/service/pages#payment', via: 'get'
   match '/pay', to: 'web/service/pages#pay', via: 'get', as: :pay
-  match '/order', to: 'web/service/pages#order', via: 'get'
+  # match '/order', to: 'web/service/pages#order', via: 'get'
   match '/order_parts', to: 'web/service/pages#order_parts', via: 'post', as: :order_parts
   match '/show_picture', to: 'web/service/pages#show_picture', via: 'get', as: :show_picture
 end

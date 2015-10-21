@@ -20,6 +20,12 @@ class Cart
     end
   end
 
+  def order!
+    cart = $redis.smembers(cart_id)
+    clean
+    cart
+  end
+
   def remove(id)
     id = item_name(id)
     $redis.srem cart_id, id

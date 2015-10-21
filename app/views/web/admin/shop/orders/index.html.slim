@@ -1,0 +1,10 @@
+table.table
+  - @orders.each do |order|
+    tr
+      td= link_to order.mail, admin_shop_order_path(order)
+      td= order.phone
+      td= order.cart.full_price
+      = form_for order, url: admin_shop_order_path(order), method: :patch do |f|
+        td= f.select :status, options_for_select(Order.statuses, selected: order.status)
+        td= f.submit
+      td= link_to 'удалить', admin_shop_order_path(order), method: :delete
